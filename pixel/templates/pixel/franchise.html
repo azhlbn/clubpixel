@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Франшиза Клуб робототехники "Пиксель"
+{% endblock %}
+{% block content %}
+
+    <div class="row franchise-1 mt-2">
+        <div class="container">
+            <div class="container text-center" style="max-width: 720px;margin-left:0;">
+                <div class="container franchise-title">Франшиза клуба робототехники "Пиксель"</div>
+                <div class="container franchise-title2 mt-4">Дело, которое приносит деньги и удовольствие</div>
+                <div class="container franchise-title3 mt-4 text-center" style="color:#414141;">
+                    <img class='' src="{% static '/img/franchise-note.png' %}" alt="">
+                    <div class="">Клуб "Пиксель" - это образование для будущих инженеров и программистов</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center mb-3 robotext">
+        <div class="container" style="max-width:1100px;">
+            <div class="col-12 mt-5 mb-2 franchise-title4" >
+                О нас
+            </div>
+            <div class="row text_maps text-left">
+                <div class="col-3 franchise-textblock" style="min-height: 40px;">
+                    <img class='button_map3' src="{% static '/img/franchise-3.png' %}" alt="">
+                    <p class="franchise-text">Сеть филиалов робототехники в Москве и Московской области.</p>
+                </div>
+                <div class="col-3 franchise-textblock">
+                    <img class='button_map3' src="{% static '/img/franchise-4.png' %}" alt="">
+                    <p class="franchise-text">Лицензия на проведение образовательной деятельности в области дополнительного образования.
+                    </p>
+                </div>
+                <div class="col-3 franchise-textblock">
+                    <img class='button_map3' src="{% static '/img/franchise-5.png' %}" alt="">
+                    <p class="franchise-text">Авторская программа обучения, одобренная Министерством образования.</p>
+                </div>
+            </div>
+            <div class="row mt-2 text_maps text-left">
+                <div class="col-3 franchise-textblock">
+                    <img class='button_map3' src="{% static '/img/franchise-6.png' %}" alt="">
+                    <p class="franchise-text">База клиентов более 2000 человек и более 500 действующих учеников в учебное время</p>
+                </div>
+                <div class="col-3 franchise-textblock">
+                    <img class='button_map3' src="{% static '/img/franchise-7.png' %}" alt="">
+                    <p class="franchise-text">Мы не только про образование, но и про продажи. Накопленный опыт по поиску и привлечению клиентов, позволяет снизить риск сезонности и выходить в прибыль круглый год.
+                    </p>
+                </div>
+                <div class="col-3 franchise-textblock">
+                    <img class='button_map3' src="{% static '/img/franchise-8.png' %}" alt="">
+                    <p class="franchise-text">Мы работаем с направлениями: Lego Education, Scratсh, программирование на базе Minecraft, Processing, 3D моделирование и 3D печать.</p>
+                </div>
+            </div>
+            <div class="col-12 ">
+                <a href="{% url 'franchise_form' %}"><button class="btn btn-outline-custom franchise-btn franch-btn-margin">Получить презентацию</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="container franchise-blocksize">
+        <div class="row">
+            <div class="col-3 franchise-textblock2" style="padding-top: 10px;">
+                <img class='franchise-img2' src="{% static '/img/franchise-9.png' %}" alt="">
+                <p class="franchise-text2">Что дает франшиза Клуба "Пиксель"</p>
+                <p class="franchise-text3">Вы получаете подробные инструкции и стандарты работы по открытию собственного
+                    Клуба.</p>
+            </div>
+            <div class="container franchise-title5">
+                <img class='franchise-img' src="{% static '/img/franchise-10.png' %}" alt="">
+                <div class="inside-img2">Мы выделили 3 основных этапа взаимодействия с нашими партнерами:
+                    <ul><li>подготовка</li>
+                        <li>сопровождение</li>
+                        <li>масштабирование</li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container franchise-title6">
+        Сотрудничество с нами дает Вам ряд преимуществ
+    </div>
+    <div class="container franchise-blocks">
+        <div class="block-img">
+            <img src="{% static '/img/franchise-11.jpg' %}" alt="">
+            <div class="block-img-text">
+                <p style="font-weight:bold;">Административно-хозяйственная деятельность:</p>
+                <p>Помощь в поиске помещения;</p>
+                <p>Стандарты оформления учебных классов (в т.ч. с учетом требовании СанПиН 2.4.4.3172-14);</p>
+                <p>Номенклатура комплектующих по мебели и оборудованию всех помещений;</p>
+            </div>
+        </div>
+        <div class="block-img">
+            <img src="{% static '/img/franchise-11.jpg' %}" alt="">
+            <div class="block-img-text">
+                <p style="font-weight:bold;">Делопроизводство:</p>
+                <p>Обучение собственника работе с персоналом;</p>
+                <p>Портреты кандидатов по должностям и рекомендации по поиску персонала;</p>
+                <p>Порядок оформления сотрудников и расчет заработной платы;</p>
+            </div>
+        </div>
+        <div class="block-img">
+            <img src="{% static '/img/franchise-11.jpg' %}" alt="">
+            <div class="block-img-text">
+                <p style="font-weight:bold;">Продукт:</p>
+                <p>Обучение преподавателей</p>
+                <p>Программа обучения и методические материалы;</p>
+                <p>Описание процессов по проведению занятии;</p>
+                <p>CRM для учета клиентов;</p>
+            </div>
+        </div>
+        <div class="block-img">
+            <img src="{% static '/img/franchise-11.jpg' %}" alt="">
+            <div class="block-img-text">
+                <p style="font-weight:bold;">Продажи и маркетинг:</p>
+                <p>Брендбук и руководство по использованию фирменного стиля;</p>
+                <p>Маркетинговый план, порядок планирования и распределения рекламного бюджета;</p>
+                <p>CRM система для продаж;</p>
+                <p>Обучение по ведению бизнес-аккаунтов в социальных сетях;</p>
+            </div>
+        </div>
+    </div>
+    <div class="container franchise-blocks mt-4">
+        <div class="block-img2">
+            <img src="{% static '/img/franchise-12.jpg' %}" alt="">
+            <div class="block-img2-text">
+                <p style="font-weight:bold;h">Финансы:</p>
+                <p>Помощь в открытий расчетного счета и настройке интернет-эквайринга;</p>
+                <p>Управленческий и финансовый учет;</p>
+                <p>Бухгалтерия и налоговый учет;</p>
+            </div>
+        </div>
+        <div class="block-img2">
+            <img src="{% static '/img/franchise-12.jpg' %}" alt="">
+            <div class="block-img2-text">
+                <p style="font-weight:bold;">Сервисы:​</p>
+                <p>Сайт, инструкция и рекомендации по созданию своего сайта;</p>
+                <p>Корпоративная почта;</p>
+                <p>База знаний, которая включает описание всех процессов и внутренние инструкции;</p>
+            </div>
+        </div>
+        <div class="block-img2">
+            <img src="{% static '/img/franchise-12.jpg' %}" alt="">
+            <div class="block-img2-text">
+                <p style="font-weight:bold;">Юридическая поддержка:</p>
+                <p>Помощь в выборе правовой формы и режима налогообложения;</p>
+                <p>Договор оферта Курсы и Лагерь;</p>
+                <p>Договора для сотрудников;</p>
+            </div>
+        </div>
+        <div class="block-img2">
+            <img src="{% static '/img/franchise-12.jpg' %}" alt="">
+            <div class="block-img2-text">
+                <p style="font-weight:bold;">Проводим обучение:</p>
+                <p>Основы менеджмента;</p>
+                <p>Продажи, онлайн и офлайн привлечение клиентов;</p>
+                <p>Планирование и делегирование обязанностей;</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 text-center playfont">
+        <a href="{% url 'franchise_form' %}"><button class="btn btn-outline-custom franchise-btn franch-btn-margin">Финансовая модель</button></a>
+    </div>
+    <div class="container franchise-title6 mb-4 ">
+        Цифры:
+    </div>
+    <div class="row franchise-block">
+        <div class="form-inline container franchise-block1size">
+            <div class="container franchise-block1">
+                <p class="franchise-text4">Вложения:</p>
+                <div class="form-inline">
+                    <div class="franchise-textblocksize">
+                        <span class="franchise-text5">Паушальный взнос:<br></span>
+                        <span class="franchise-text6">200 000 ₽</span>
+                    </div>
+                    <div class="ml-3">
+                        <span class="franchise-text5">Ноутбуки:<br></span>
+                        <span class="franchise-text6">120 000 ₽</span>
+                    </div>
+                </div>
+                <div class="form-inline mt-4">
+                    <div class="franchise-textblocksize">
+                        <span class="franchise-text5">Мебель и наполнение:<br></span>
+                        <span class="franchise-text6">100 000 ₽</span>
+                    </div>
+                    <div class="ml-3">
+                        <span class="franchise-text5">Аренда:<br></span>
+                        <span class="franchise-text6">60 000 ₽</span>
+                    </div>
+                </div>
+                <div class="form-inline mt-4">
+                    <div class="franchise-textblocksize">
+                        <span class="franchise-text5">Оборудование:<br></span>
+                        <span class="franchise-text6">150 000 ₽</span>
+                    </div>
+                    <div class="ml-3">
+                        <span class="franchise-text5">Реклама:<br></span>
+                        <span class="franchise-text6">40 000 ₽</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container franchise-block2">
+                <img class='' src="{% static '/img/franchise-14.png' %}" alt="">
+                <div class="franchise-block2-text">
+                    Инвестиции от: <span class="franchise-text7">650 000 ₽</span>
+                    <div class="franchise-text8">Окупаемость: от 6 до 9 месяцев</div>
+                    <div class="franchise-text9">Доход в месяц:</div>
+                    <div class="franchise-text10">120 000 ₽</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-4 franchise-img3">
+            <img src="{% static '/img/franchise-15.png' %}" alt="">
+            <div class="franchise-img3-text">Ежемесячный роялти <span style="font-weight: bold;">7%</span> от оборота
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="col-4 franchise-text11">
+            Сотрудничая с нами, Вы экономите:
+        </div>
+        <div class="row mt-2 text_maps text-left">
+            <div class="col-3 franchise-textblock">
+                <img class='button_map2' src="{% static '/img/blue.png' %}" alt="">
+                <p class="franchise-text13">На методисте, все изменения программы и запуск новых курсов мы берем на себя</p>
+            </div>
+            <div class="col-3 franchise-textblock">
+                <img class='button_map2' src="{% static '/img/red.png' %}" alt="">
+                <p class="franchise-text13">На старшем преподавателе, мы обучим Ваших преподавателей, поэтому Вам необязательно наличия технического и педагогического образования​
+                </p>
+            </div>
+            <div class="col-3 franchise-textblock">
+                <img class='button_map2' src="{% static '/img/yellow.png' %}" alt="">
+                <p class="franchise-text13">Вам не нужно ежемесячно оплачивать CRM систему, корпоративную почту и другие сервисы, мы подключаем Вас к своему аккаунту и вносим все платежи, Вам остается только пользоваться</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 text-center playfont franchise-bottom-btn">
+        <a href="{% url 'franchise_form' %}">
+            <button class="btn btn-outline-custom franchise-btn franch-btn-margin">Открыть свой клуб</button>
+        </a>
+    </div>
+{% endblock %}

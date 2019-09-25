@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container news-detail-block mt-3">
+        <div class="row">
+          <div class="col-12 mt-3 text-center"><p class="news_detail_title">{{ news_single.title }}</p></div>
+          <div class='col-10 offset-1 mt-3 text-left'>{{ news_single.body | safe }}</div>
+          <div class='col-10 offset-1 mt-3 mb-2 text-right'>{{ news_single.date }}</div>
+          <div class="col-10 offset-1 text-center mt-4 mb-3"><img class='news_detail_img' src="{{ news_single.thumb.url }}" alt=""></div>
+        </div>
+    </div>
+
+    <!-- Last News start -->
+    <div class="container news_last_topheader py-2">
+      <div class="row">
+        <div class="col-6">Последние новости:</div>
+        <a class="col-6 text-right" href='{% url 'news:news' %}'><div class='news_last_header2'>Смотреть все</div></a>
+      </div>
+    </div>
+    <div class="container mb-5">
+      <div class="row news_last_list">
+        <div class="container form-inline last_news_block">
+        {% for news_single in news_last %}
+          <div class="news_last_block card mt-3" style='height:250px; width:250px;'>
+            <a href='{% url 'news:detail' slug=news_single.slug %}'><img class='news_last_img' src="{{ news_single.thumb.url }}" alt=""></a>
+            <a href='{% url 'news:detail' slug=news_single.slug %}'><div class="news_last_header mt-2">{{ news_single.title }}</div></a>
+{#            <div class="news_date py-2 mr-2">{{ news_single.date }}</div>#}
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- Last News end -->
+{% endblock %}

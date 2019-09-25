@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Записаться в лагерь и курсы Клуба "Пиксель"
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+Бесплатное пробное занятие по робототехнике и программированию. Скидка для многодетных семей. Акции, скидки, бюджетные цены, доступная робототехника.
+"/>
+{% endblock %}b
+{% block keywords %}
+<meta name="keywords" content="
+"/>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center robotext py-5">
+                <div class='table-title'>Заполните форму и получите приглашение на занятие</div>
+
+                <div class="signup-block container text-center mt-4" style='padding:0;max-width:560px;'>
+                    <script>var amo_forms_params = {"id":416413,"hash":"87916933797fdeb540654fed269d0742","locale":"ru"};</script>
+                    <script id="amoforms_script" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js"></script>
+                </div>
+                <div class="container signup-text">
+                    Бесплатное пробное занятие – возможность попробовать и принять решение по поводу записи. Если ученик
+                    не записывается в группу, занятие бесплатное, его оплачивать не нужно. При покупке абонемента,
+                    пробное занятие входит в абонемент и списывается, как первое занятие.
+                </div>
+
+                <!-- <div class="container mt-5 signup_form py-4 px-4 text-left">                   -->
+
+                    <!-- <form method="post">
+                        {% csrf_token %}
+
+                        <div class="form-row signup_text">
+                            <div class="form-group col-md-6">
+                                <label class='ml-2' for="name">Ваше имя и фамилия* </label>
+                                <input id="name" class="form-control" type="text" maxlength='30' name="name" placeholder="Имя" required>
+                            </div>
+                            <div class="form-group col-md-6 mt-2">
+                                <label for="surname">  </label>
+                                <input id="surname" class="form-control" type="text" name="surname" placeholder="Фамилия" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='ml-2' for="email">Электронная почта* </label>
+                            <input id="email" class="form-control" type="email" name="email" placeholder="" required>
+                        </div>
+                        <div class="form-group">
+                            <label class='ml-2' for="tel">Контактный телефон*</label>
+                            <input id="tel" class="form-control" type="text" name="tel" placeholder="" required>
+                        </div>
+                        <div class="form-group">
+                            <label class='ml-2' for="kid_name">Фамилия и имя ребенка</label>
+                            <input id="kid_name" class="form-control" type="text" name="kid_name" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label class='ml-2' for="kid_age">Возраст ребенка</label>
+                            <input id="kid_age" class="form-control" type="text" name="kid_age" placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="branches" class="ml-2">Филиалы</label>
+                            <select id="branches" type="text" name="branches" class="form-control">
+                                <option selected>Выберите удобный для вас филиал</option>
+                                {% for branch in branches %}
+                                    <option>{{ branch.adr }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class='ml-2' for="message">Дополнительно</label>
+                            <input id="message" maxlength="70" class="form-control" type="text" name="message" placeholder="">
+                        </div>
+
+                        <label class='py-2 ml-2' for="message">Обработка персональных данных</label>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                            <label class="custom-control-label" style="font-weight:100;" for="customControlValidation1">Я даю свое согласие на обработку персональных данных</label>
+                            <div class="invalid-feedback">Example invalid feedback text</div>
+                        </div>
+
+                        <div class="form-actions text-center">
+                            <button class='btn btn_signup waves-effect waves-light' type="submit">Отправить</button>
+
+                        </div>
+
+                    </form> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

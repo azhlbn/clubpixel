@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Unity3D | Москва и Московская область | Клуб робототехники Пиксель
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+Программа обучения, описание курсов, сертификаты о дополнительном образовании, конструирование, моделирование и развитие ребенка. Компьютерная грамотность, мелкая моторика, развитие интелекта
+"/>
+{% endblock %}
+{% block keywords %}
+<meta name="keywords" content="
+"/>
+{% endblock %}
+{% block content %}
+
+    <div class="row kodu-block-1bg playfont text-center">
+        <div class="container kinder-block-1">
+            <div class="kinder-title-1" style="color: #fff;">
+                Unity 3D
+            </div>
+            <div class="kinder-title-2" style="color: #fff;">
+                Курс - 36 занятий <br>
+                3 триместра по 12 занятий <br>
+                Курс проходит в учебном году<br>
+                По итогам курса выдается сертификат
+            </div>
+        </div>
+    </div>
+    <div class="container kinder-title-3 playfont py-2">
+        Unity 3D – 1 модуль
+    </div>
+    <div class="kinder-block-2">
+        <div class="kinder-block-3" style="padding: 15px;">
+            <img class='kinder-img-1 autosize-max500' src="{% static '/img/unity-img.jpg' %}" alt="" style="height: auto;">
+        </div>
+        <div class="kinder-block-4">
+            <p>Курс Unity предназначен для того, чтобы ребенок взглянул на игры со стороны разработки и познакомился с терминами и примерами игр. Настройка объектов, префабов, анимации, программирование – являются основными задачами, которые должен решить разработчик игр.</p>
+            <p>Изучая этот курс, дети научатся анализировать и разбирать игру на основные компоненты. С легкостью добавят свои объекты в игровую сцену и напишут программу перемещения для объектов. В конце курса ребята создадут свою полноценную игру, которую можно будет перенести на компьютер. Навыки, полученные в ходе обучения, помогут развить у ребенка пространственное и логическое мышления, получат знания в широкой области, а именно: программировании, физики объектов, создании анимации, моделировании объектов, дизайне.</p>
+            <p><strong>Пример занятия:</strong></p>
+            <p>На занятии дети изучат новую дисциплину (например, анимация) и разберут редактор, с помощью которого происходит настройка в движке Unity. Самостоятельно, по заготовленным шаблонам, произведут настройку и добавят в игровую сцену.</p>
+        </div>
+    </div>
+    <div class="container text-center py-2" style="margin-bottom: 20px;">
+        <a class='scroll' href="{% url 'main' %}#anchor-signup">
+            <button class="btn btn-outline-custom block4-btn2 waves-effect waves-light">Записаться
+            </button>
+        </a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Команда "Пиксель"
+{% endblock %}
+{% block content %}
+    <div class="container playfont text-center py-4 mt-4">
+        <div class="title-license">
+            <div class="lic-title">Команда клуба "Пиксель"</div>
+        </div>
+        <div class="container" style="display: flex; flex-flow: row wrap;">
+            {% for name, role, photo, bg_img in all_team_members %}
+                <div class="team-slide">
+                    <div class="team-block">
+                        <div class="team-member-block-1" style="background-image: url('{{ bg_img }}');">
+                            <img class='img-size-lower400' src="{{ photo.url }}" alt="">
+                        </div>
+                        <div class="team-text">
+                            <div class="team-member-name">{{ name }}</div>
+                            <div class="team-member-role">{{ role }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

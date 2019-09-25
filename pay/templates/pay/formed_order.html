@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="container text-center playfont py-4" style="max-width: 500px;">
+                <h3 style="font-weight:bold; margin-bottom: 30px;">Детали заказа</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item dark-bg">ФИО ученика:</li>
+                  <li class="list-group-item light-bg">{{ order.kids_name }}</li>
+                  <li class="list-group-item dark-bg">Дата рождения ученика:</li>
+                  <li class="list-group-item light-bg">{{ order.birth_date }}</li>
+                  <li class="list-group-item dark-bg">ФИО плательщика:</li>
+                  <li class="list-group-item light-bg">{{ order.name }}</li>
+                  <li class="list-group-item dark-bg">Номер телефона:</li>
+                  <li class="list-group-item light-bg">{{ order.tel }}</li>
+                  <li class="list-group-item dark-bg">Электронная почта:</li>
+                  <li class="list-group-item light-bg">{{ order.email }}</li>
+                  <li class="list-group-item dark-bg">Адрес филиала:</li>
+                  <li class="list-group-item light-bg">{{ order.branches }}</li>
+                  <li class="list-group-item dark-bg">Количество абонементов:</li>
+                  <li class="list-group-item light-bg">{{ order.qty }}</li>
+                  <li class="list-group-item dark-bg">К оплате:</li>
+                  <li class="list-group-item light-bg">{{ order.cost }} руб.</li>
+                </ul>
+                {# RFI button - start #}
+{#                <form method="POST"  class="application mt-3"  accept-charset="UTF-8" action="https://partner.rficb.ru/alba/input/">#}
+{#                  <input type="hidden" name="key" value="K1oE2iaCiQatAE5QMcBQ/NynkoZdKNihMiv9Q1bJHsI=" />#}
+{#                  <input type="hidden" name="cost" value="{{ order.cost }}" />#}
+{#                  <input type="hidden" name="name" value="{{ order.name }}" />#}
+{#                  <input type="hidden" name="default_email" value="{{ order.email }}" />#}
+{#                  <input type="hidden" name="order_id" value="{{ order.id }}" />#}
+{#                  <input type="image" id="a1lite_button" style="border: 0;" src="https://partner.rficb.ru/gui/images/a1lite_buttons/button_small.png" value="Оплатить" />#}
+{#                </form>#}
+                {# RFI button - end #}
+                {# modulbank - start #}
+                <form method="post" action="https://pay.modulbank.ru/pay">
+                    <input type="hidden" name="testing" value="0">
+                    <input type="hidden" name="order_id" value="{{ order.id }}">
+                    <input type="hidden" name="amount"value="{{ order.cost }}">
+                    <input type="hidden" name="merchant" value="a646bf9f-447a-4a75-8d0c-c59c2e8efb32">
+                    <input type="hidden" name="signature" value="{{ signature }}">
+                    <input type="hidden" name="description" value="Заказ №{{ order.id }}">
+                    <input type="hidden" name="receipt_contact" value="{{ order.email }}">
+                    <input type="hidden" name="receipt_items" value="{{ receipt_items }}">
+                    <input type="hidden" name="client_phone" value="{{ order.tel }}">
+                    <input type="hidden" name="client_email" value="{{ order.email }}">
+                    <input type="hidden" name="client_name" value="{{ order.name }}">
+                    <input type="hidden" name="success_url" value="https://docs.google.com/forms/d/e/1FAIpQLSegmLhK-RzWohvFv87S1RCjtr-Uur7-idufr6OLoH3KX83eww/viewform">
+                    <input type="hidden" name="fail_url" value="https://pay.modulbank.ru/fail">
+                    <input type="hidden" name="unix_timestamp" value="{{ current_time }}">
+                    <input type="submit" class='pay-button formed-order-btn block4-btn-kinder2 green-bg-and-shadow' value="Отправить платеж">
+                </form>
+                {# modulbank - end #}
+            </div>
+        </div>
+    </div>
+{% endblock %}

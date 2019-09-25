@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Оплата | Москва и Московская область | Клуб робототехники Пиксель
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+    Оплата услуги Клуба Пиксель
+Онлайн оплата, оплата без комиссии, оплата на сайте, моментальная оплата, оплата на расчетный счет, оплата с карты
+"/>
+{% endblock %}
+
+{% block keywords %}
+<meta name="keywords" content="
+"/>
+{% endblock %}
+{% block content %}
+    <div class="row payment-top payment-top-bg">
+        <div class="container text-center robotext">
+            <div class="col-12 pay_title1">Онлайн оплата</div>
+            <div class="col-12 pay_title2">Правила учета занятий и продления абонемента</div>
+            </div>
+    </div>
+    {% if is_franchise %}
+        <div class="row my-4 text-center">
+            <div class="col-12 pay_title1 mb-2" style="line-height:normal;">В выбранном филиале оплата через сайт недоступна</div>
+            <div class="col-12 pay_title2" style="font-weight: 300;line-height:normal;">Выберите другой филиал или свяжитесь с нами по телефону: {{ franchise.tel }}</div>
+            <div class="mobile-cities container text-center" style="margin: 40px auto 20px auto;">
+                <button class="btn btn-custom-dark dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style='color: #414141; background-color: unset !important; width: 210px;'>
+                    <img class='maps-and-flags' src="{% static 'img/maps-and-flags.png' %}" alt="">
+                    {% if all_cities_chose %}
+                        Выберите город
+                    {% else %}
+                        {{ city_name }}
+                    {% endif %}
+                </button>
+                <div class="dropdown-menu dropdown-primary dropdown-up mobile-dropdown-cities" style="margin-left: 25px; margin-top: 5px;">
+                    {% for city in cities %}
+                        {% if city != city_name %}
+                            <a class="dropdown-item dropdown-mobile"
+                               href="{% url 'set_city' city_flag=city.flag %}#abonements-anchor" style="text-align: center;">{{ city }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+    <div class="row">
+        <div class="container mt-2 mb-4">
+            <div class="text-left robotext pay_text1">
+                В нашем Клубе действует абонементная система оплаты занятий:
+                <li>Наличие абонемента гарантирует закрепление места в группе. </li>
+                <li>Оплачивая первый абонемент, Вы подтверждаете, что согласны с условиями нашего договора и правилами нашего Клуба.</li>
+                <li>Мы рекомендуем продлевать абонемент, когда у Вас остается 1 занятие.</li>
+            </div>
+        </div>
+    </div>
+    <div id='abonements-anchor' style="position:absolute;margin-top:-90px;"></div>
+    <div class="row">
+        <div class="container">
+            <div class="col-12 text-center robotext price_title">
+                {% if all_cities_chose %}
+                    <p>Выберите город и абонемент</p>
+                {% else %}
+                    <p>Выберите абонемент</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mobile-cities container text-center" style="margin: 20px auto 20px auto;">
+            <button class="btn btn-custom-dark dropdown-toggle" type="button" id="dropdownMenu1"
+                    data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style='color: #414141; background-color: unset !important; width: 210px;'>
+                <img class='maps-and-flags' src="{% static 'img/maps-and-flags.png' %}" alt="">
+                {% if all_cities_chose %}
+                Выберите город
+                {% else %}
+                {{ city_name }}
+                {% endif %}
+            </button>
+            <div class="dropdown-menu dropdown-primary dropdown-up mobile-dropdown-cities" style="margin-left: 25px; margin-top: 5px;">
+                {% for city in cities %}
+                    {% if city != city_name %}
+                        <a class="dropdown-item dropdown-mobile"
+                           href="{% url 'set_city' city_flag=city.flag %}#abonements-anchor" style="text-align: center;">{{ city }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="container product_list mb-3">
+                {% for product in products %}
+                    {% if all_cities_chose %}
+                        <a class='scroll' href="{% url 'payment' %}#abonements-anchor">
+                            <div class="price-card-block mt-3">
+                                {% if product.img %}
+                                    <img class='price-card-img' src="{{ product.img.url }}" alt="">
+                                {% else %}
+                                    <img class='price-card-img' src="{% static 'img/product_default.jpg' %}" alt="">
+                                {% endif %}
+                                <div class="price-card-name mt-3">{{ product.name }}</div>
+                                <hr class="price-card-line">
+                                <div class="price-card-price">Выберите город</div>
+                            </div>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'product_detail' slug=product.slug %}">
+                            <div class="price-card-block mt-3">
+                                {% if product.img %}
+                                    <img class='price-card-img' src="{{ product.img.url }}" alt="">
+                                {% else %}
+                                    <img class='price-card-img' src="{% static 'img/product_default.jpg' %}" alt="">
+                                {% endif %}
+                                <div class="price-card-name mt-3">{{ product.name }}</div>
+                                <hr class="price-card-line">
+                                {% if product.crossed_price %}
+                                    <div class="block-prices">
+                                        <div class="price-card-price"><span class="crossed_price">{{ product.crossed_price }} ₽</span></div>
+                                        <div class="price-card-price">{{ product.price }} ₽</div>
+                                    </div>
+                                {% else %}
+                                    <div class="price-card-price">{{ product.price }} ₽</div>
+                                {% endif %}
+                            </div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <p class="container text-left robotext mt-3 price-bottom-text">Оплачивая наши услуги, вы подтверждаете
+            согласие с <a href="{{ courses.file.url }}">договором-оферты "Курсы"</a> и <a
+                    href="{{ price.file.url }}">прайс-листом</a></p>
+        <p class="container text-left robotext mb-4 price-bottom-text">Оплачивая наши услуги, вы подтверждаете
+            согласие с <a href="{{ techcamp.file.url }}">договором-оферты "Городской лагерь"</a> или <a
+                    href="{{ countrycamp.file.url }}">договором-оферты "Загородный лагерь"</a></p>
+    </div>
+    {% endif %}
+{% endblock %}

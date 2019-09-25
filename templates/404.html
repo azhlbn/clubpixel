@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Страница не найдена | Робототехника Москва | Подольк | Домодедово | Чехов | Серпухов
+{% endblock %}
+{% block meta %}
+<meta name="robots" content="noindex, nofollow">{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center playfont py-5 text-black-50 error-page">
+            <div class="error-font-title">Запрашиваемая страница не найдена</div>
+            <p>Возможно, неправильно указан путь в адресной строке или страница была удалена.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

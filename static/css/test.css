@@ -1,0 +1,48 @@
+.btn-outline-success{
+    color:#28a745;
+    background-color:transparent;
+    background-image:none;
+    border-color:#28a745
+}
+.btn-outline-success:hover{
+    color:#fff;
+    background-color:#28a745;
+    border-color:#28a745
+}
+.btn-outline-success.focus,.btn-outline-success:focus{
+    box-shadow:0 0 0 .2rem rgba(40,167,69,.5)
+}
+.btn-outline-success.disabled,.btn-outline-success:disabled{
+    color:#28a745;
+    background-color:transparent
+}
+.btn-outline-success:not(:disabled):not(.disabled).active,.btn-outline-success:not(:disabled):not(.disabled):active,.show>.btn-outline-success.dropdown-toggle{
+    color:#fff;
+    background-color:#28a745;
+    border-color:#28a745
+}
+.btn-outline-success:not(:disabled):not(.disabled).active:focus,.btn-outline-success:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-success.dropdown-toggle:focus{
+    box-shadow:0 0 0 .2rem rgba(40,167,69,.5)
+}
+
+<div class="col-sm-2 mt-4 h-50 green">
+                <h6 class="font-weight-bold">Меню:</h6>
+                <a href="#"><h6>Главная</h6></a>
+                <a href="#"><h6>О нас</h6></a>
+                <a href="#"><h6>Курсы</h6></a>
+                <a href="#"><h6>Лагерь</h6></a>
+                <a href="#"><h6>Оплата</h6></a>
+                <a href="#"><h6>Галерея</h6></a>
+                <a href="#"><h6>Новости</h6></a>
+                <a href="#"><h6>Расписание</h6></a>
+                <a href="#"><h6>Пиксель Бонус</h6></a>
+            </div>
+            <div class="col-sm-3 mt-4 red h-50">
+                <h6 class="font-weight-bold">Быстрый доступ:</h6>
+                <a href="#"><h6>Записаться на курсы</h6></a>
+                <a href="#"><h6>Записаться в лагерь</h6></a>
+                <a href="#"><h6>Адреса филиалов</h6></a>
+                <a href="#"><h6>Личный кабинет</h6></a>
+                <a href="#"><h6>Поддержка для учащихся</h6></a>
+                <a href="#"><h6>Оставить отзыв</h6></a>
+            </div>

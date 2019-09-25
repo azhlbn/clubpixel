@@ -1,0 +1,273 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html style='' lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="{% static '/img/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static '/css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static '/css/style.css' %}" rel="stylesheet">
+    <title>
+        {% block title %}
+            Pixel Club
+        {% endblock %}
+    </title>
+    {% block description %}
+    {% endblock %}
+    {% block keywords %}
+    {% endblock %}
+    <script src="https://1034.listokcrm.ru/wapi/script?login=1&page=office"></script>
+    <!-- Extending text -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86125983-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-86125983-2');
+    </script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(49402810, "init", {
+            id: 49402810,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/49402810" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=cyrillic-ext');
+    </style>
+    <!-- yandex maps -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=<7e5c1b3b-7da9-46a1-8645-268fbecb4b3b>&lang=ru_RU" type="text/javascript">
+    </script>
+    <!-- yandex maps end -->
+</head>
+<body>
+<nav class="row navbar sticky-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #2d2d2d; padding-left: 5px; padding-right: 5px;">
+    <div class="container" style="max-width: 1301px;">
+{#        <div class="redlink_box"><a class='redlink' href="{% url 'admin:index' %}">#}
+{#            <img src="{% static 'img/redlink.jpg' %}" alt="">#}
+{#        </a></div>#}
+        <a href="{% url 'main' %}" class="navbar-brand">
+            <img src="{% static '/img/logo.png' %}" width="182px" height="51px" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-3 menutext">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        О Пиксель
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">О нас</a>
+                        <a class="dropdown-item" href="{% url 'galery' %}">Галерея</a>
+                        <a class="dropdown-item" href="{% url 'news:news' %}">Новости</a>
+                        <a class="dropdown-item scroll" href="{% url 'main' %}#branches">Адреса</a>
+                        <a class="dropdown-item" href="https://camp.clubpixel.ru/">Расписание</a>
+                        <a class="dropdown-item" href="https://camp.clubpixel.ru/">Пиксель Бонус</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Курсы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item scroll" href="{% url 'main' %}#courses">Курсы</a>
+                        <a class="dropdown-item" href="https://int.clubpixel.ru/">Интенсивы</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Лагерь
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://citycamp.clubpixel.ru/">Городской лагерь</a>
+                        <a class="dropdown-item" href="https://camp.clubpixel.ru/">Загородный лагерь</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Сотрудничество
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Мастер-классы</a>
+                        <a class="dropdown-item" href="{% url 'franchise' %}">Франшиза</a>
+                        <a class="dropdown-item" href="https://podolsk.hh.ru/employer/3518049">Работа</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'payment' %}" class="nav-link">Оплата</a>
+                </li>
+            </ul>
+
+            <div class="menu-rightblock my-lg-0">
+                <ul class="navbar-nav mr-auto menutext" style="padding-top: 10px;">
+                    <li class="nav-item btn-menu-margin">
+                        <a href="{% url 'signup' %}" style="height: 37px;">
+                            <button class="btn btn-outline-custom menutext btn_menu">Записаться</button>
+                        </a>
+                    </li>
+                    <li class="nav-item tel-btn">
+                        <a href="tel:+7(495)150-59-65" class="nav-link" style="padding-top: 6px !important;">
+                            <img class='tel-ico' src="{% static 'img/tel-ico.png' %}" alt="">
+                            <span class="tel-digits">+7(495)150-59-65</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown cities-margin">
+                        <button class="btn btn-custom-dark dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <img class='maps-and-flags' src="{% static 'img/maps-and-flags.png' %}" alt="">
+                            {% if not city_name %}
+                                Выберите город
+                            {% else %}
+                                {{ city_name }}
+                            {% endif %}
+                        </button>
+                        <div class="dropdown-menu dropdown-primary dropdown-up">
+                            {% for city in cities %}
+                                <a class="dropdown-item"
+                                   href="{% url 'set_city' city_flag=city.flag %}">{{ city }}</a>
+                            {% endfor %}
+{#                            <a class="dropdown-item" href="{% url 'session_reset' %}">Session reset</a>#}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            {#      <div class='btn-menu-margin'>#}
+            {#        <a href="{% url 'signup' %}"><button class="btn btn-outline-custom my-2 my-sm-0 menutext btn_menu">Записаться</button></a>#}
+            {#      </div>#}
+        </div>
+    </div>
+</nav>
+
+    {% block content %}
+        There is no any content
+    {% endblock %}
+
+<!-- Footer -->
+<div class="before-footer-row"></div>
+<footer class="row page-footer font-small unique-color-light bgfooter">
+    <div class="container text-center textfooter">
+        <div class="row text-left">
+            <div class="col h-50" style="width: auto;">
+                <div class="row" style='flex-wrap:nowrap'>
+                    <div class="col-sm-6 mb-2" style="width: auto;padding-right:0;min-width: 120px;padding-left:0;">
+                        <div class="font-weight-bold mb-3">Меню:</div>
+                        <a href="{% url 'main' %}"><div>Главная</div></a>
+                        <a class='scroll' href="{% url 'main' %}#anchor-about">
+                            <div>О нас</div>
+                        </a>
+                        <a href="{% url 'main' %}#courses"><div>Курсы</div></a>
+                        <a href="{% url 'payment' %}"><div>Оплата</div></a>
+                        <a href="{% url 'galery' %}"><div>Галерея</div></a>
+                        <a href="{% url 'news:news' %}"><div>Новости</div></a>
+                        <a href="{% url 'table' %}"><div>Расписание</div></a>
+                        <a href="{% url 'bonus' %}"><div>Пиксель Бонус</div></a>
+                    </div>
+                    <div class="col-sm-6 footer_right_col">
+                        <div class="font-weight-bold mb-3">Быстрый доступ:</div>
+                        <a href="{% url 'signup' %}"><div>Записаться на курсы</div></a>
+                        <a href="{% url 'signup' %}"><div>Записаться в лагерь</div></a>
+                        <a href="{% url 'main' %}#anchor_adr2" class="scroll"><div>Адреса филиалов</div></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSegmLhK-RzWohvFv87S1RCjtr-Uur7-idufr6OLoH3KX83eww/viewform"><div>Оставить отзыв</div></a>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-8 posle500" style="min-width:286px;padding-right: 0; padding-left:0;">
+                        <div>2018 Клуб робототехники "Пиксель"</div>
+                        <a href="{% url 'policy' %}"><div>Политика конфиденциальности</div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 h-50 " style="width: auto;">
+                <div class="font-weight-bold mb-3">Сотрудничество:</div>
+                <a href="https://podolsk.hh.ru/employer/3518049"><div>Работа в клубе "Пиксель"</div></a>
+                <a href="{% url 'franchise' %}"><h6>Франшиза</h6></a>
+                <div class="do500">
+                    <div class="font-weight-bold mt-3">Контакты:</div>
+                    <div>+7(495)150-59-65<br>+7(906)020-52-50</div>
+                    <a href="mailto:Info@clubpixel.ru"><div class="mb-2">Info@clubpixel.ru</div></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3 footer_padding">
+                <div class="font-weight-bold margin-for-ss mb-3">Сообщества:</div>
+                <div class="form-inline">
+                    <a href="https://www.instagram.com/clubpixel.ru/" class="inst_ico ss_ico"></a>
+                    <a href="https://vk.com/clubpixel_ru" class="vk_ico ss_ico"></a>
+                    <a href="https://ok.ru/clubpixel" class="ok_ico ss_ico"></a>
+                    <a href="https://www.facebook.com/clubpixel.ru" class="fb_ico ss_ico"></a>
+                </div>
+                <div class="posle500">
+                    <div class="mt-2 font-weight-bold mt-4">Контакты:</div>
+                    <div>+7(495)150-59-65<br>+7(906)020-52-50</div>
+                    <a href="mailto:info@clubpixel.ru">
+                        <div class="mb-4">Info@clubpixel.ru</div>
+                    </a></div>
+                <div class="form-inline margin_for_lic">
+                    <a href="{% url 'license' %}" class="minlicense mb-3"></a>
+                    <div class="font-weight-bold pt-0 mb-5 ml-2" style="line-height: normal;">Государственная<br>лицензия:<br><br>
+                        <a href="{% url 'license' %}">Смотреть</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 do500" style="width: auto;margin-bottom: 25px;">
+                <div>2018 Клуб робототехники "Пиксель"</div>
+                <a href="{% url 'policy' %}">
+                    <div>Политика конфиденциальности</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{% static '/js/popper.min.js' %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static '/js/bootstrap.min.js' %}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{% static '/js/mdb.min.js' %}"></script>
+<!-- anchor script -->
+</body>
+</html>

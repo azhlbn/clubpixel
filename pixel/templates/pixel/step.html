@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+Как пройти в Клуб робототехники "Пиксель" в г. Домодедово
+{% endblock %}
+{% block content %}
+
+    <div class="container playfont py-4">
+        <div class="serpuhov-title">
+            <p>Мы находимся по адресу: МО, г. Подольск, ул.43 Армии дом 17А, 1 этаж, отдельный вход.</p>
+            <span>Как нас найти?</span>
+        </div>
+        <div class="serpuhov-txt">
+            1. Идете вдоль дома по ул.43 Армии 17А, с внешней стороны (не со стороны подъездов) (см. фото 1);<br>
+            2. С одной стороны дома, перед нами, вы увидите магазин канцтовары (см. фото 2);<br>
+            3. С другой стороны дома увидите школу английского языка "Бридж" (см. фото 3);<br>
+            4. Проходите вперед до белой вывески Step to Step (см. фото 4,5,6,7 и 8);<br><br>
+            ​
+            Появились вопросы, звоните:<br>
+            тел: +7(495)150-59-65<br>
+            тел: +7(926)904-04-12<br><br>
+            ​
+            Ждем Вас на занятиях!
+        </div>
+    </div>
+    <div class="serpuhov-imgs">
+        <img class="serpuhov-img" src="{% static 'img/step-img-1.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/step-img-2.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/step-img-3.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/step-img-4.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/step-img-5.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/step-img-6.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/step-img-8.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/step-img-7.jpg' %}" alt="">
+    </div>
+
+{% endblock %}

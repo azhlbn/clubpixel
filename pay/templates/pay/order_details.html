@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container playfont mt-5">
+        {% if all_cities %}
+            <div class="row">
+                <div class="col-12 text-center robotext mt-1">
+                    <h3 style="font-weight:bold;">Для оформления абонемента выберите город</h3>
+                </div>
+                <div class="col-10 offset-1 signup-thx-line" style="margin-top: 40px;"></div>
+                <div class="text-center mt-4 mb-5 ml-auto mr-auto">
+                    <button class="btn btn-custom-dark dropdown-toggle" type="button" id="dropdownMenu1"
+                            data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false"
+                            style='color: #414141; background-color: unset !important; width: 210px;'>
+                        <img class='maps-and-flags' src="{% static 'img/maps-and-flags.png' %}" alt="">
+                        Выберите город
+                    </button>
+                    <div class="dropdown-menu dropdown-primary dropdown-up mobile-dropdown-cities"
+                         style="margin-left: 25px; margin-top: 5px;">
+                        {% for city in cities %}
+                            {% if city != city_name %}
+                                <a class="dropdown-item dropdown-mobile"
+                                   href="{% url 'set_city' city_flag=city.flag %}#abonements-anchor"
+                                   style="text-align: center;">{{ city }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+        <div class="container" style="max-width: 900px;">
+            <div class="mb-5">
+                <table style="width: 100%;">
+                    <tr>
+                    <td width="60px"><img class='order-img' src="{% static '/img/logohigh.png' %}" alt=""></td>
+                        <td>
+                            <div class="order-top-text">Оформление заказа</div>
+                        </td>
+                        <td align="right" style='font-size: 15px;' class="order-link order-mob-hide">
+                            <a href="{% url 'payment' %}">< Назад к выбору абонемента</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row" style="padding-right: 15px; padding-left: 15px;">
+                <div class="order-block1">Выбранный абонемент</div>
+                <div class="order-block2 order-mob-hide">Цена</div>
+                <div class="order-block3 order-mob-hide">Количество</div>
+                <div class="order-block4 order-mob-hide">Итого</div>
+                <hr class="pay-line2">
+            </div>
+            <div class="order-block-line">
+                <div class="order-block1">
+                    <table>
+                        <tr>
+                            <td><img style="width:120px;height:auto;" src="{{ product_detail.full_img.url }}" alt=""></td>
+                            <td style='padding-left:15px;' valign="top"><span class="order-product-name">{{ product_detail.name }}</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="order-block5 order-mob-hide">{{ product_detail.price }}<span style="font-size:15px; padding: 0;"> ₽</span></div>
+                <div class="order-dsk-hide container form-inline mt-3" style='padding:0;'>
+                    <div class="" style="width:50%;">Цена: </div>
+                    <div class="order-block5">{{ product_detail.price }}<span style="font-size:14px;"> ₽</span></div>
+                </div>
+                <div class="order-block3" style='padding-top: 0;'>
+                  <div class="container form-inline order-block3-size">
+                    <div class="order-dsk-hide" style='width:50%;'>Количество: </div>
+                    <div class='order-qty'>
+                        <select type='number' name='qty' class='couponqty cart-item-qty' data-id='{{ product_detail.slug }}' min='1'>
+                          <option selected>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                  <div class="order-dsk-hide" style="margin-top: 15px;">Итого:</div>
+                  <div class="order-block8 order-block8-font" id='cart-item-total-{{ product_detail.slug }}'>{{ item_total }} <span class=''> ₽</span></div>
+                <hr class="pay-line2" style="margin-top: 15px;">
+            </div>
+        </div>
+        <div class="container playfont" style="max-width: 900px;">
+            <div class="order-container">
+                <div class="order-block6">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group displaynone">
+                            <input id="cost" type="text"
+                                   name="cost" value="{{ item_total_2 }}">
+                        </div>
+                        <div class="form-group displaynone">
+                            <input id="abon" type="text"
+                                   name="abon" value="{{ product_detail.name }}">
+                        </div>
+                        <div class="form-group displaynone">
+                            <input id="qty" type="text"
+                                   name="qty" value='1'>
+                        </div>
+                        <div class="order-title1 mb-4 mt-4">Выбор филиала</div>
+                        <div class="form-group">
+                            {#                            <label for="branches" class="ml-2">Филиалы</label>#}
+                            <select id="branches" type="text" name="branches" class="custom-select order_branches form-control"
+                                    required>
+                                <option value="">Выберите удобный для вас филиал</option>
+                                {% for branch in branches %}
+                                    <option>{{ branch.adr }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="order-title1 mb-4 mt-4">Данные ученика</div>
+                        <div class="form-group">
+                            <label class='ml-2' for="kids_name">Фамилия и имя ученика* </label>
+                            <input id="kids_name" class="order_kids_name form-control" type="text" maxlength='30'
+                                   name="kids_name" placeholder="" required>
+                        </div>
+                        <div class="form-group">
+                            <label class='ml-2' for="birth_date">Дата рождения ученика* </label>
+                            <input id="birth_date" class="birth_date form-control" type="date" maxlength='30'
+                                   name="birth_date" placeholder="" required>
+                        </div>
+                        <div class="order-title1 mb-4 mt-4">Данные покупателя</div>
+                        <div class="form-group">
+                            <label class='ml-2' for="name">Ваши имя и фамилия* </label>
+                            <input id="name" class="order_name form-control" type="text" maxlength='30' name="name"
+                                   placeholder="" required>
+                        </div>
+                        <div class="form-group">
+                            <label class='ml-2' for="email">Электронная почта* </label>
+                            <input id="email" class="order_email form-control" type="email" name="email" placeholder=""
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label class='ml-2' for="tel">Контактный телефон*</label>
+                            <input id="tel" class="order_tel form-control" type="text" name="tel" placeholder=""
+                                   required>
+                        </div>
+                        <div class="form-group form-check" style="margin-top: 30px;margin-left:10px;margin-bottom:0;">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                            <label class="form-check-label" for="exampleCheck1">Я ознакомлен и принимаю условия <a
+                                    href="{{ doc_courses.file.url }}" target="_blank">договора-оферты</a></label>
+                        </div>
+                        <div class="form-actions text-center ">
+                            <button id='_order_create_btn'
+                                    class='btn btn-outline-custom block4-btn-kinder2 green-bg-and-shadow' type="submit">
+                                Продолжить
+                            </button>
+                        </div>
+                    </form>
+{#                    <form method="POST"  class="application"  accept-charset="UTF-8" action="https://partner.rficb.ru/alba/input/">#}
+{#                        <input type="hidden" name="key" value="AkaW4EK2jVqnMEb0YiHbGYrhD2NAQ/YgTJ60JSaXAc0=" />#}
+{#                        <input type="hidden" name="cost" value="{{ item_total }}" />#}
+{#                        <input type="hidden" name="name" value="{{ product_detail.name }}" />#}
+{#                        <input type="hidden" name="default_email" value="[EMAIL]" />#}
+{#                        <input type="hidden" name="order_id" value="0" />#}
+{#                        <input type="image" id="a1lite_button" style="border: 0;" src="https://partner.rficb.ru/gui/images/a1lite_buttons/button_small.png" value="Оплатить" />#}
+{#                    </form>#}
+                </div>
+                <div class="order-block7 mb-3">
+                    <input type="checkbox" id="hd-1" class="hide"/>
+                    <label for="hd-1" ><img src="{% static '/img/coupon.png' %}" alt="" class='mr-2'>Использовать купон</label>
+                    <div style="padding:0;">
+                        <div class="input-group mb-3">
+                            <input type="text" class="btncoupon form-control" placeholder="Номер купона"
+                                   aria-label="Номер купона" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button data-id='{{ product_detail.slug }}' class="btn btn-md btn-outline-default m-0 px-3 py-2 z-depth-0 waves-effect"
+                                        type="button" id="button_addon2">OK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+
+    </div>
+
+    <script type="text/javascript" src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.cart-item-qty').on('change', function(){
+                coupon_entered = $('.btncoupon').val()
+                qty = $(this).val()
+                item_slug = $(this).attr('data-id')
+                data = {
+                    qty: qty,
+                    item_slug: item_slug,
+                    coupon_entered: coupon_entered,
+                }
+                $.ajax({
+                    type: "GET",
+                    url: '{% url "change_item_qty" %}',
+                    data: data,
+                    success: function(data){
+                        $('#cart-item-total-'+item_slug).html(parseFloat(data.item_total).toFixed(2) + '  ₽')
+                        document.getElementById('cost').value=parseFloat(data.item_total_2).toFixed(2);
+                        document.getElementById('qty').value=data.item_qty;
+                    }
+                })
+            })
+        })
+    </script>
+    <script>
+        button_addon2.onclick = function(){
+            coupon_entered = $('.btncoupon').val()
+            item_slug = $(this).attr('data-id')
+            qty = $('.couponqty').val()
+            data = {
+                coupon_entered: coupon_entered,
+                item_slug: item_slug,
+                qty: qty,
+            }
+            $.ajax({
+                type: "GET",
+                url: '{% url "coupon" %}',
+                data: data,
+                success: function(data){
+                    $('#cart-item-total-'+item_slug).html(parseFloat(data.item_total).toFixed(2) + '  ₽')
+                    document.getElementById('cost').value=parseFloat(data.item_total_2).toFixed(2);
+                }
+            })
+        }
+    </script>
+
+{% endblock %}

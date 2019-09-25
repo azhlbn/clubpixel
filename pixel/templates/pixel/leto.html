@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Лагерь | Москва и Московская область | Клуб робототехники Пиксель
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+    Летний лагерь Подольск. Возраст от 8 до 15 лет. C 09:00 до 18:00, 5 дней в неделю. Lego конструирование, робототехника, программирование, scratch, создание игр, создание анимации, minecraft программирование, 3D моделирование и 3D принтер.
+"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="
+    лагерь подольск, лагерь мечта подольск, лагерь ромашка подольск, лагерь родина подольск, детский лагерь в подольске, лагерь чехов, лагерь климовск, лагерь кузнечики
+"/>
+{% endblock %}
+{% block content %}
+
+<div class="row leto-one">
+    <div class="container">
+        <div class="col-12 text-center mt-4 mb-2" style="padding-left: 0; padding-right: 0;">
+                <span class="title-leto">Летний технический лагерь<br>
+Открыт набор на 2019 г.</span>
+        </div>
+        <div class="row mt-1 posle991">
+            <div class="container intense-btn-col text-center">
+                <a class='scroll mr-4' href="#description">
+                    <button class="btn btn-outline-custom leto_btn">Описание лагеря</button>
+                </a>
+                <a class='scroll mr-4' href="#directions">
+                    <button class="btn btn-outline-custom leto_btn">Направления</button>
+                </a>
+                <a class='scroll ' href="#schedule">
+                    <button class="btn btn-outline-custom leto_btn">Распорядок дня</button>
+                </a>
+                <a class='scroll ml-4' href="#leto-table">
+                    <button class="btn btn-outline-custom leto_btn">Расписание смен</button>
+                </a>
+            </div>
+        </div>
+        <div class="col-12 text-center do991" style="padding-left:0; padding-right: 0;">
+            <div class='mt-2'>
+                <a class='scroll' href="{% url 'main' %}#anchor-signup">
+                    <button class="btn btn-outline-custom intense_btn leto_btn">Получить скидку</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="intense-anchor1" id="description"></div>
+<div class="courses-two py-3">
+    <div class="col-12 text-center">
+        <div class="title-intense">Описание лагеря</div>
+        <div class="row dots mt-2"></div>
+        <div class="container intense-txt-2 intense-txt-block">
+            Летний городской лагерь "Пиксель" - это место, где дети могут отдохнуть на школьных каникулах, найти новых
+            друзей и провести время с пользой. Робототехника, программирование Minecraft и Processing, 3D -
+            моделирование и печать. Практические занятия и интерактивные методики развивают навыки в самых
+            востребованных сферах. Мы полностью берем на себя решение всех вопросов, связанных с детьми пока Вы на
+            работе.
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="container leto-hidenblock">
+            <div class="row leto-txt2">
+                <div class="leto-margin-2">
+                    <div style="color:#00AB4E;">Группы по 10 детей</div>
+                    <div style="color:#00a5d5;">Смены по 5 дней</div>
+                    <div style="color:#ff0000;">С 9:00 до 18:00</div>
+                </div>
+                <div class="leto-margin-3">
+                    <div style="color:#00a5d5;">Развитие</div>
+                    <div style="color:#ffc800;">От 8 до 15 лет</div>
+                    <div style="color:#ff0000;">12500р/смена</div>
+                </div>
+            </div>
+        </div>
+        <div class='container text-center mt-4 desktop-hide2' style='min-width: 1100px;'>
+            <img src="{% static 'img/summer-2_1.png' %}" alt="">
+        </div>
+        <div class="container desktop-hide2" style='min-width: 1100px;'>
+            <div class="row text-center" style='min-width: 1100px;'>
+                <div class="intense-txt-3 leto-margin" style='color:#00a5d5;'>
+                    Смены по 5 дней
+                    <div class="leto-txt1">
+                        Каждая смена
+                        с пн.-пт.
+                    </div>
+                </div>
+                <div class="intense-txt-3" style='margin-left: 7px; color:#ff0000;'>
+                    С 9:00 до 18:00
+                    <div class="leto-txt1">
+                        Возможен
+                        индивидуальный
+                        график
+                    </div>
+                </div>
+                <div class="intense-txt-3" style='margin-left: 8px; color:#ffc800;'>
+                    От 8 до 15 лет
+                    <div class="leto-txt1">
+                        Смены
+                        формируются по
+                        возрасту
+                    </div>
+                </div>
+                <div class="intense-txt-3" style='margin-left: 11px; color:#00AB4E;'>
+                    Группы по 10 детей
+                    <div class="leto-txt1">
+                        Маленькие группы
+                        (индивидуальный
+                        подход)
+                    </div>
+                </div>
+                <div class="intense-txt-3" style='margin-left: 21px; color:#00a5d5;'>
+                    Развитие
+                    <div class="leto-txt1">
+                        Робототехника,
+                        программирование,
+                        3D моделирование и 3D печать
+                    </div>
+                </div>
+                <div class="intense-txt-3" style='margin-left: 20px; color:#ff0000;'>
+                    12500р/смена
+                    <div class="leto-txt1">
+                        В данную стоимость
+                        "Все включено"
+                        Вам не нужно доплачивать
+                    </div>
+                </div>
+            </div>
+            <div class="title2-intense">Скидка за раннее бронирование 20%*</div>
+            <div style="font-size: 14px;line-height: normal;margin-bottom: 15px;">*предложение действует на ограниченное
+                количество мест
+            </div>
+            <a class='scroll' href="{% url 'main' %}#anchor-signup">
+                <button class="btn btn-outline-custom intense_btn mb-4" style='width: 250px;'>Получить скидку
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="intense-anchor1" id="directions"></div>
+<div class="text-center py-3 playfont leto-padding">
+    <div class="title-intense">Направления</div>
+    <div class="row dots mt-2"></div>
+    <div class="posle1159 leto-padding">
+        <div class="leto-block">
+            <img src="{% static 'img/leto-3.png' %}" alt="">
+            <div class="leto-txt4 leto-txt-params">
+                Занятия робототехникой - это увлекательное путешествие ребенка в мир роботов и программ,
+                проектирования и конструирования, которое позволит юному гению узнавать новое об окружающем его
+                мире, создавая и "оживляя" различные модели и конструкции. Дети будут развивать мелкую моторику рук
+                и конструкторские навыки при сборке Lego, ассоциативное мышление и навыки владения компьютером при
+                написании программы для робота в легкой, для восприятия, визуальной среде программирования Lego EV3
+                Mindstorms (Lego WeDo).
+            </div>
+        </div>
+        <div class="leto-block">
+            <img src="{% static 'img/leto-4.png' %}" alt="">
+            <div class="leto-txt5 leto-txt-params">
+                В игровой форме увлекательной вселенной всемирно известной игры Minecraft юные программисты изучат
+                навыки текстового программирования, напишут свой мод для игры, а помимо всего этого, научатся
+                набирать текст на клавиатуре, овладеют компьютером и некоторыми прикладными программами, изучат
+                устройство ПК.<br>
+
+                Это увлекательное и яркое приключение Ваши будущие инженеры запомнят надолго!
+            </div>
+        </div>
+        <div class="leto-block">
+            <img src="{% static 'img/leto-5.png' %}" alt="">
+            <div class="leto-txt6 leto-txt-params">
+                Как делаются игры для телефона? Какими навыками должен обладать человек, который этим занимается? На
+                эти и многие другие вопросы ответит курс по программированию на языке Processing! Этот язык вобрал в
+                себя лучшие качества своего прародителя - Java! Он имеет столько же возможностей, но сам по себе
+                прост для восприятия как детьми так и взрослыми! Вместе с Processing вы сможете быстро изучить
+                основы программирования: от объявления переменных до работы с объектами, научиться проектировать
+                алгоритмы. Понять основы компьютерной графики, узнать об основных цветовых моделях, создавать
+                интерактивную графику на простых примерах.
+            </div>
+        </div>
+        <div class="leto-block">
+            <img src="{% static 'img/leto-6.png' %}" alt="">
+            <div class="leto-txt7 leto-txt-params">
+                Многие дети, когда были маленькими, очень любили рисовать различные фигурки, раскрашивать раскраски
+                и многое другое… Но это не предел! В нашем курсе дети научатся рисовать на компьютере с помощью
+                клавиатуры и мыши. Причем это будут не просто рисунки, а рисунки в 3D! Дети поймут что это не так
+                сложно и узнают много нового и интересного: что такое система координат, как нарисовать что-то
+                сложное простыми средствами, переход от 2D к 3D графике, основные операции в 3D. Эти навыки помогут
+                выработать у детей пространственное мышление, лучше овладеть компьютером и основными компьютерными
+                средствами рисования. По итогу курса ребята спроектируют и напечатают свое собственное изделие!
+            </div>
+        </div>
+    </div>
+    <div class="leto-padding do1159">
+        <div class="leto-block">
+            <img class='leto-img-33' src="{% static 'img/leto-33.png' %}" alt="">
+            <div class="leto-txt44 leto-txt-params">
+                Занятия робототехникой - это увлекательное путешествие ребенка в мир роботов и программ,
+                проектирования и конструирования, которое позволит юному гению узнавать новое об окружающем его
+                мире, создавая и "оживляя" различные модели и конструкции. Дети будут развивать мелкую моторику рук
+                и конструкторские навыки при сборке Lego, ассоциативное мышление и навыки владения компьютером при
+                написании программы для робота в легкой, для восприятия, визуальной среде программирования Lego EV3
+                Mindstorms (Lego WeDo).
+            </div>
+        </div>
+        <div class="leto-block">
+            <img class="leto-img-44" src="{% static 'img/leto-44.png' %}" alt="">
+            <div class="leto-txt55 leto-txt-params">
+                В игровой форме увлекательной вселенной всемирно известной игры Minecraft юные программисты изучат
+                навыки текстового программирования, напишут свой мод для игры, а помимо всего этого, научатся
+                набирать текст на клавиатуре, овладеют компьютером и некоторыми прикладными программами, изучат
+                устройство ПК.<br>
+
+                Это увлекательное и яркое приключение Ваши будущие инженеры запомнят надолго!
+            </div>
+        </div>
+        <div class="leto-block">
+            <img class='leto-img-55' src="{% static 'img/leto-55.png' %}" alt="">
+            <div class="leto-txt66 leto-txt-params">
+                Как делаются игры для телефона? Какими навыками должен обладать человек, который этим занимается? На
+                эти и многие другие вопросы ответит курс по программированию на языке Processing! Этот язык вобрал в
+                себя лучшие качества своего прародителя - Java! Он имеет столько же возможностей, но сам по себе
+                прост для восприятия как детьми так и взрослыми! Вместе с Processing вы сможете быстро изучить
+                основы программирования: от объявления переменных до работы с объектами, научиться проектировать
+                алгоритмы. Понять основы компьютерной графики, узнать об основных цветовых моделях, создавать
+                интерактивную графику на простых примерах.
+            </div>
+        </div>
+        <div class="leto-block">
+            <img class='leto-img-66' src="{% static 'img/leto-66.png' %}" alt="">
+            <div class="leto-txt77 leto-txt-params">
+                Многие дети, когда были маленькими, очень любили рисовать различные фигурки, раскрашивать раскраски
+                и многое другое… Но это не предел! В нашем курсе дети научатся рисовать на компьютере с помощью
+                клавиатуры и мыши. Причем это будут не просто рисунки, а рисунки в 3D! Дети поймут что это не так
+                сложно и узнают много нового и интересного: что такое система координат, как нарисовать что-то
+                сложное простыми средствами, переход от 2D к 3D графике, основные операции в 3D. Эти навыки помогут
+                выработать у детей пространственное мышление, лучше овладеть компьютером и основными компьютерными
+                средствами рисования. По итогу курса ребята спроектируют и напечатают свое собственное изделие!
+            </div>
+        </div>
+    </div>
+</div>
+<div class='intense-anchor1' id="schedule"></div>
+<div class="row leto-three posle1300">
+    <div class="leto-container">
+        <div class="title-intense" style='color: #fff; text-align:center;'>Распорядок дня</div>
+        <div class="row dots2 mt-2"></div>
+        <div class="leto-block">
+            <img src="{% static 'img/leto-8.png' %}" alt="">
+            <div class="row">
+                <div class="leto-m1" style="margin-left: 4px;">
+                    <div class="leto-txt8">9:00-9:30</div>
+                    <div class="leto-txt9">Общий сбор и утренняя зарядка</div>
+                </div>
+                <div class="leto-m2" style="margin-left: 154px;">
+                    <div class="leto-txt8">9:30-11:00</div>
+                    <div class="leto-txt9">3D моделирование</div>
+                </div>
+                <div class="leto-m1" style="margin-left: 279px;">
+                    <div class="leto-txt8">11:00-11:30</div>
+                    <div class="leto-txt9">Перекус</div>
+                </div>
+                <div class="leto-m2" style="margin-left: 440px;">
+                    <div class="leto-txt8">11:30-12:00</div>
+                    <div class="leto-txt9">Настольные игры</div>
+                </div>
+                <div class="leto-m1" style="margin-left: 570px;">
+                    <div class="leto-txt8">12:30-14:00</div>
+                    <div class="leto-txt9">Программирование
+                        Minecraft
+                        или Processing
+                    </div>
+                </div>
+                <div class="leto-m2" style="margin-left: 750px;">
+                    <div class="leto-txt8">14:00-15:00</div>
+                    <div class="leto-txt9">Обед</div>
+                </div>
+                <div class="leto-m1" style="margin-left: 861px;">
+                    <div class="leto-txt8">15:00-16:00</div>
+                    <div class="leto-txt9">Прогулка
+                        на территории
+                        закрытого парка
+                    </div>
+                </div>
+                <div class="leto-m2" style="margin-left: 1035px;">
+                    <div class="leto-txt8">16:00-16:30</div>
+                    <div class="leto-txt9">Полдник</div>
+                </div>
+                <div class="leto-m1" style="margin-left: 1135px;">
+                    <div class="leto-txt8">16:30-18:00</div>
+                    <div class="leto-txt9">Робототехника</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="intense-anchor1" id="leto-table"></div>
+<div class="leto-two">
+    <div class="intense-two-block">
+        <div class="title-intense" style='color: #fff; text-align:center;'>Расписание смен на 2019 г.</div>
+        <div class="row dots3 mt-2"></div>
+        <div id="cat" class='intense-two-slideblock'>
+            <div class='intense-two-txt form-inline'>
+                <div class='leto-txt3' style="font-weight: bold;"><a>Июнь</a></div>
+                <div class='intense-two-arrow'><a><img src="{% static 'img/arrow2.png' %}" alt=""></a></div>
+            </div>
+            <p class='intense-two-insidetxt'>
+                3 июня – 7 июня - программа 1 (Возраст 8 - 11 лет)<br>
+                10 июня – 14 июня - программа 2 (Возраст 10 - 15 лет)<br>
+                17 июня – 21 июня - программа 3 (Возраст 8 - 11 лет)<br>
+                24 июня – 28 июня - программа 1 (Возраст 10 - 15 лет)
+            </p>
+            <hr class='leto-line'>
+            <div class='intense-two-txt form-inline'>
+                <div class='leto-txt3' style="font-weight: bold;"><a>Июль</a></div>
+                <div class='intense-two-arrow'><a><img src="{% static 'img/arrow2.png' %}" alt=""></a></div>
+            </div>
+            <p class='intense-two-insidetxt'>
+                1 июля – 5 июля - программа 2 (Возраст 8 -11 лет)<br>
+                8 июля – 12 июля - программа 3 (Возраст 10 - 15 лет)<br>
+                15 июля – 19 июля - программа 1 (Возраст 8 -11 лет)<br>
+                22 июля – 26 июля - программа 2 (Возраст 10 - 15 лет)
+            </p>
+            <hr class='leto-line'>
+            <div class='intense-two-txt form-inline'>
+                <div class='leto-txt3' style="font-weight: bold;"><a>Август</a></div>
+                <div class='intense-two-arrow'><a><img src="{% static 'img/arrow2.png' %}" alt=""></a></div>
+            </div>
+            <p class='intense-two-insidetxt'>
+                29 июля – 2 августа - программа 3 (Возраст 8 - 11 лет)<br>
+                5 августа – 9 августа - программа 1 (Возраст 10 - 15 лет)<br>
+                12 августа – 16 августа - программа 2 (Возраст 8 - 11 лет)<br>
+                19 августа – 23 августа - программа 3 (Возраст 10 - 15 лет)
+            </p>
+            <hr class='leto-line'>
+        </div>
+        <a class='scroll' href="{% url 'main' %}#anchor-signup">
+            <button class="btn btn-outline-custom intense-two-btn leto_btn2">Записаться в лагерь</button>
+        </a>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#cat p").hide();
+        $("#cat div").click(function () {
+            $(this).next("p").slideToggle("slow").siblings("p:visible").slideUp("slow");
+        });
+    });
+</script>
+{% endblock %}

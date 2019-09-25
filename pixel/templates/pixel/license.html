@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Образовательная лицензия Клуб робототехники "Пиксель"
+{% endblock %}
+{% block content %}
+    <div class="container playfont text-center py-4">
+        <div class="title-license">
+            <div class="lic-title">Лицензия на осуществление образовательной деятельности
+                Клуба робототехники "Пиксель"</div>
+        </div>
+        <div class="text-license">
+            <span>Образовательная деятельность в Клубе робототехники "Пиксель" ведется на
+                основании государственной лицензии №77635 от 24 июля 2018 г. </span>
+        </div>
+        <div class="license-block mt-4">
+            <img class='license-img mb-2' src="{% static 'img/lic1.jpg' %}" alt="">
+            <img class='license-img' src="{% static 'img/lic2.jpg' %}" alt="">
+        </div>
+    </div>
+
+{% endblock %}

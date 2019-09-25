@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Летние курсы | Москва и Московская область | Клуб робототехники Пиксель
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+Летние курсы, для от 5 до 17 лет. Летний досуг, успейте записаться со скидкой.
+Интересное лето, летний кружок, летняя секция, летний детский центр.
+"/>
+{% endblock %}
+{% block keywords %}
+<meta name="keywords" content="
+"/>
+{% endblock %}
+{% block content %}
+
+    <div class="row courses-details playfont text-center">
+        <div class="container kinder-block-1">
+            <div class="kinder-title-1" style="color:#ffffff;">
+                Летние курсы<br>
+            </div>
+            <div class="kinder-title-2" style="color:#ffffff;">
+                WeDo на производстве и Mindstorms EV3 - инженер<br>
+            <div class="courses-margin">Курс 12 занятий<br>
+                По итогам курса выдается сертификат</div>
+            </div>
+        </div>
+    </div>
+    <div class="container kinder-title-3 playfont py-2 mt-3">
+        WeDo на производстве
+    </div>
+    <div class="kinder-block-2">
+        <div class="kinder-block-3">
+            <img class='mindstorms-img-1 autosize-max500' style='padding: 15px;' src="{% static '/img/summ-courses-1.png' %}" alt="">
+        </div>
+        <div class="kinder-block-4">
+            <p>Как известно, все вещи, начиная с булавок и заканчивая самолетами, изготавливаются на заводах и фабриках
+                опытными инженерами, которые специально обучены делать так, чтобы всё, чем вы пользуетесь работало
+                хорошо и не ломалось. Эти вещи делаются огромными партиями, и всех людей планеты не хватит, чтобы
+                воссоздать вручную то, что сейчас продается в магазинах. Для того, чтобы ускорить производственные
+                процессы, были придуманы специальные технологические машины, которые позволяют производить по несколько
+                десятков изделий в минуту. Именно с такими машинами мы познакомимся. Дети узнают, что такое фрезеровка и
+                сверление и какие детали можно получить с использованием этих операций. Увидят как работают реальные
+                станки и соберут собственную модель из Lego WeDo! Дети будут развивать мелкую моторику и научатся
+                работать в команде.</p>
+
+            <p><strong>Пример занятия:</strong></p>
+
+            <p>Ребята узнают про новый станок, например, фрезерный, про то, как он работает, какие детали можно
+                получить, если им пользоваться, затем собирают его по инструкции и пишут для него управляющую
+                программу.</p>
+
+            <p><strong>Оборудование:</strong></p>
+
+            <p>Для обучения используется конструктор Lego Education WeDo и среда программирования Wedo.</p>
+        </div>
+    </div>
+    <div class="container text-center py-2">
+        <a class='scroll' href="{% url 'main' %}#anchor-signup">
+            <button class="btn btn-outline-custom block4-btn3 waves-effect waves-light">Записаться
+            </button>
+        </a>
+    </div>
+    <div class="container kinder-title-3 playfont py-2 mt-4">
+        Mindstorms EV3 - инженер
+    </div>
+    <div class="kinder-block-2">
+        <div class="kinder-block-3">
+            <img class='mindstorms-img-2 autosize-max500' style='padding: 15px;' src="{% static '/img/summ-courses-2.png' %}" alt="">
+        </div>
+        <div class="kinder-block-4">
+            <p>На данном курсе дети будут рассматривать различные профессии в жизни и перекладывать обязанности
+                человека, работающего по этой профессии на роботов, которых будут собирать на занятии. Этот курс поможет
+                получить новые навыки в области конструирования, поможет развить ассоциативное мышление, мелкую моторику
+                рук и повысит компьютерную грамотность ребенка.</p>
+            <p><strong>Пример занятия:</strong></p>
+            <p>Дети разбирают профессию сортировщика деталей (для чего она нужна и рассуждают как можно заменить
+                сортировщика роботом), затем собирают робота сортировщика по инструкции и программируют его.</p>
+            <p><strong>Оборудование:</strong></p>
+
+            <p>Для обучения используется конструктор LEGO Mindstorms EV3 и среда программирования LEGO Mindstorms
+                EV3.</p>
+        </div>
+    </div>
+    <div class="container text-center py-2 mb-3">
+        <a class='scroll' href="{% url 'main' %}#anchor-signup">
+            <button class="btn btn-outline-custom block4-btn3 waves-effect waves-light">Записаться
+            </button>
+        </a>
+    </div>
+{% endblock %}

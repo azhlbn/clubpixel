@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Курсы | Москва и Московская область | Клуб робототехники Пиксель
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+    Обучение детей от 5 до 17 лет. Lego WeDo, Lego Mindstorms EV3, Scratch программирование, Minecraft программирование, processing, создание игр, 3D моделирование и 3D печать. 3D принтер
+"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="
+    Подольск детям, день детей в подольске, дети при деле подольск, детский кружок, детская секция, детские курсы, детский досуг, подольск ребенок, чехов, климовск, кузнечики
+"/>
+{% endblock %}
+{% block content %}
+
+    <div class="row courses-one">
+        <div class="container">
+            <div class="col-12 text-center courses-title1">
+                <span class="title-courses">Курсы по робототехнике и программированию</span>
+            </div>
+            <div class="row mt-1 white-bg">
+                <div class="container button-col text-center">
+                    <a class='scroll' href="#kinder">
+                        <button class="courses-button-black btn btn-outline-custom btn2 button-col1">5-7 лет</button>
+                    </a>
+                    <a class='scroll' href="#wedo">
+                        <button class="button-col1 courses-button-black btn btn-outline-custom btn2">7-9 лет</button>
+                    </a>
+                    <a class='scroll' href="#scratch">
+                        <button class="button-col1 courses-button-black btn btn-outline-custom btn2">8-11 лет</button>
+                    </a>
+                    <a class='scroll' href="#mindstorms">
+                        <button class="button-col1 courses-button-black btn btn-outline-custom btn2">10-13 лет</button>
+                    </a>
+                    <a class='scroll' href="#mindstormspro">
+                        <button class="button-col1 courses-button-black btn btn-outline-custom btn2">12-14 лет</button>
+                    </a>
+                    <a class='scroll' href="#arduino">
+                        <button class="button-col1 courses-button-black btn btn-outline-custom btn2">13-15 лет</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row courses-two">
+        <div class="col-12 text-center mt-3">
+            <span class="title-courses">Учебный год</span>
+            <div class="row dots mt-2"></div>
+            <div class="container courses-text courses-text-block">
+                Курс разделен на триместры и длится учебный год (с сентября по май). По итогам курса мы проводим открытые уроки, на которых ученики резюмируют пройденные темы и презентуют проекты родителям.
+            </div>
+        </div>
+        <div class="col-12 courses-2 mb-2">
+            <div class="courses-anchor" id="kinder"></div>
+            <div class="container playfont courses-text-block2 text-center">
+                <div class="courses-txt2">Киндер</div>
+                <div class="courses-txt3">5-7 лет</div>
+            </div>
+            <div class="row playfont">
+                <div class="container form-inline text-center courses-buttonblock-two">
+                    <div class="">
+                        <a href="{% url 'kinder' %}">
+                            <button class="courses-button-yellow btn btn-outline-custom btn2 btn-courses">Механика в жизни</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'kinder' %}">
+                            <button class="courses-button-yellow btn btn-outline-custom btn2 btn-courses">Флора и фауна</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'kinder' %}">
+                            <button class="courses-button-yellow btn btn-outline-custom btn2 btn-courses">Путешествие в космос</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12 courses-3 mb-2">
+            <div class="courses-anchor" id="wedo"></div>
+            <div class="container playfont courses-text-block3">
+                <p style="color:#2F2E2E;">WeDo</p>
+                <p style="color:#00ab4e;">7-9 лет</p>
+            </div>
+            <div class="row playfont">
+                <div class="container form-inline text-center courses-buttonblock-two">
+                    <div class="">
+                        <a href="{% url 'wedo' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Основы робототехники</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'wedo' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Продвинутый WeDo</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'wedo' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Механика</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12 courses-4 mb-2">
+            <div class="courses-anchor" id="scratch"></div>
+            <div class="container playfont courses-text-block4">
+                <p style="color:#ffffff;">Scratch</p>
+                <p style="color:#ffffff;">8-11 лет</p>
+            </div>
+            <div class="row playfont">
+                <div class="container form-inline text-center courses-buttonblock-two">
+                    <div class="">
+                        <a href="{% url 'scratch' %}">
+                            <button class="courses-button-red btn btn-outline-custom btn2 btn-courses">Знакомство со Scratch</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'scratch' %}">
+                            <button class="courses-button-red btn btn-outline-custom btn2 btn-courses">Анимация в Scratch</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'scratch' %}">
+                            <button class="courses-button-red btn btn-outline-custom btn2 btn-courses">Создание игр в Scratch</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12 courses-5 mb-2">
+            <div class="courses-anchor" id="mindstorms"></div>
+            <div class="container playfont courses-text-block5">
+                <p style="color:#ffffff;">Mindstorms</p>
+                <p style="color:#ffffff;">10-13 лет</p>
+            </div>
+            <div class="row playfont">
+                <div class="container form-inline text-center courses-buttonblock-two">
+                    <div class="">
+                        <a href="{% url 'mindstorms' %}">
+                            <button class="courses-button-blue btn btn-outline-custom btn2 bluebtn-courses">Системы управления на EV3</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'mindstorms' %}">
+                            <button class="courses-button-blue btn btn-outline-custom btn2 bluebtn-courses">Продвинутый EV3</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'mindstorms' %}">
+                            <button class="courses-button-blue btn btn-outline-custom btn2 bluebtn-courses">Проектная работа с EV3</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12 courses-6 mb-4">
+            <div class="courses-anchor" id="mindstormspro"></div>
+            <div class="container playfont courses-text-block6">
+                <p style="color:#ffffff;">Mindstorms PRO</p>
+                <p style="color:#ffffff;">12-14 лет</p>
+            </div>
+            <div class="row playfont">
+                <div class="container form-inline text-center courses-buttonblock-two">
+                    <div class="">
+                        <a href="{% url 'mindstormspro' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Робоспорт</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'mindstormspro' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Robotc 1</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'mindstormspro' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Robotc 2</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-12 courses-7 mb-5">
+            <div class="courses-anchor" style='margin-top: -80px;' id="arduino"></div>
+            <div class="container playfont courses-text-block7">
+                <p style="color:#000000;">Arduino</p>
+                <p style="color:#239dd1;">13-15 лет</p>
+            </div>
+            <div class="row playfont">
+                <div class="container form-inline text-center courses-buttonblock-two">
+                    <div class="">
+                        <a href="{% url 'arduino' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Arduino 1</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'arduino' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Arduino 2</button>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a href="{% url 'arduino' %}">
+                            <button class="courses-button-black btn btn-outline-custom btn2 btn-courses">Arduino 3</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row courses-three mt-3 mb-3">
+        <div class="col-12 text-center mt-1">
+            <span class="title-courses text-white">Летние курсы</span>
+            <div class="row text-center dots mt-2"></div>
+            <div class="container courses-text courses-text-block text-white">
+                Летом на базе наших филиалов проходят “Летние курсы по робототехнике и программированию”. Новые уникальные сборки и задачи для наших учеников. Проведите лето с пользой.
+            </div>
+            <div class="container form-inline courses-buttonblock-three">
+                <a href="{% url 'summ_courses' %}">
+                    <button class="courses-button-transparent btn btn-outline-custom">WeDo на производстве</button>
+                </a>
+                <a href="{% url 'summ_courses' %}">
+                    <button class="btn btn-outline-custom courses-button-transparent margin-for-btn">Mindstorms EV3 инженер</button>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}

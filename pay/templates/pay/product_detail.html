@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="container mt-2 mb-3">
+        <div class="posle1100">
+            {% if product_detail.full_img %}
+                <div class="mb-3 text-center">
+                    <img class="pay-detail-img" src="{{ product_detail.full_img.url }}" alt="">
+                </div>
+            {% else %}
+                <div class="mb-3 text-center">
+                    <img class="pay-detail-img" src="{% static '/img/pay-detail-img.jpg' %}" alt="">
+                </div>
+            {% endif %}
+            <div class="pay-block playfont">
+                <div class="pay-block-left">
+                    <div class="pay-block-title">{{ product_detail.name }}</div>
+                    <div class="pay-block-txt">{{ product_detail.body | safe }}</div>
+                </div>
+                <div class="pay-block-right">
+                    {% if product_detail.crossed_price %}
+                    <div class="block-prices">
+                        <div class="price-card-price"><span class="crossed_price_details">{{ product_detail.crossed_price }} ₽</span>
+                        </div>
+                        <div class="price-card-price" style="color:#484848;">{{ product_detail.price }} ₽</div>
+                    </div>
+                    {% else %}
+                    <div class="price-card-price" style="color:#484848;">{{ product_detail.price }} ₽</div>
+                    {% endif %}
+                    <div class="" style="margin-top: 20px;"><a
+                            href="{% url 'order_details' slug=product_detail.slug %}" class="">
+                        <button class="btn btn-outline-custom block4-btn-kinder2 green-bg-and-shadow">Оплатить</button>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="do1100 playfont" style="max-width: 400px;margin:auto;">
+            <div class="pay-block-title">{{ product_detail.name }}</div>
+            {% if product_detail.crossed_price %}
+            <div class="block-prices" style="max-width: 300px;">
+                <div class="price-card-price"><span
+                        class="crossed_price_details">{{ product_detail.crossed_price }} ₽</span>
+                </div>
+                <div class="price-card-price" style="color:#484848;">{{ product_detail.price }} ₽</div>
+            </div>
+            {% else %}
+            <div class="price-card-price" style="color:#484848;">{{ product_detail.price }} ₽</div>
+            {% endif %}
+            {% if product_detail.full_img %}
+            <div class="mb-3 img-align text-center">
+                <img class="pay-detail-img" src="{{ product_detail.full_img.url }}" alt="">
+            </div>
+            {% else %}
+            <div class="mb-3 img-align text-center">
+                <img class="pay-detail-img" src="{% static '/img/pay-detail-img.jpg' %}" alt="">
+            </div>
+            {% endif %}
+            <div class="" style="margin: 30px auto 20px 15px;"><a
+                    href="{% url 'order_details' slug=product_detail.slug %}" class="">
+                <button class="btn btn-outline-custom block4-btn-kinder2 green-bg-and-shadow">Оплатить</button>
+            </a>
+            </div>
+            <div class="pay-block-txt">{{ product_detail.body | safe }}</div>
+        </div>
+    </div>
+
+{% endblock %}

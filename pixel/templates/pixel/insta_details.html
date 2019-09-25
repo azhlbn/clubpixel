@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+Фотогалерея Клуб робототехники "Пиксель" | Фото | Фотографии
+{% endblock %}
+{% block description %}
+    <meta name="description" content="Фотогаларея, фото, фотографии, фото альбомы. Фото с занятии, фото лагеря Пиксель, фотографии сборок, фотографии учебных классов, фотографии учеников."/>
+{% endblock %}
+{% block content %}
+<div class="back-to-galery"><a href="{% url 'galery' %}"><span>< Назад в галерею</a></span></div>
+
+<div class='instadet-block'>
+    <a href="{% url 'insta_details' id=prev_id %}" class="up950 instadet-arrow-block">
+        {% if prev_id != 0 %}
+        <img class='instadet-arrow' style="margin-right: 5px;" src="{% static 'img/arrow-left.png' %}" alt="">
+        {% endif %}
+    </a>
+    <div class="instadet-img-block">
+        <img class='insta-details-img' src="{{ url }}" alt="">
+        <div class="down950 instadet-mobile-arrows">
+            <a class='instadet-arrow-block-mobile' href="{% url 'insta_details' id=prev_id %}">
+                {% if prev_id != 0 %}
+                <div class="">
+                    <img class='instadet-arrow' style="margin-right: 5px;" src="{% static 'img/arrow-left.png' %}" alt="">
+                </div>
+                {% endif %}
+            </a>
+            <a class='instadet-arrow-block-mobile' href="{% url 'insta_details' id=next_id %}">
+                {% if next_id != 0 %}
+                <div class="">
+                    <img class='instadet-arrow' style='margin-left: 5px;' src="{% static 'img/arrow-right.png' %}" alt="">
+                </div>
+                {% endif %}
+            </a>
+        </div>
+    </div>
+    <div class="instadet-content up950">
+        <div>
+            <a href="{{ link }}">
+                <div class="form-inline" title="В инстаграм">
+                    <div class="instadet-pixel-logo-block"><img class="instadet-pixel-logo" src="{% static 'img/insta-pixel-logo.jpg' %}" alt=""></div>
+                    <div class="instadet-top-txt">clubpixel.ru</div>
+                    <div class="instadet-instalogo-block"><img class="instadet-insta-logo"
+                                                               src="{% static 'img/insta-logo.png' %}" alt=""></div>
+                </div>
+            </a>
+            <hr>
+            <div class="form-inline">
+                <div class="instadet-likes-n-comms"><img class='insta-items' src="{% static 'img/insta-likes.jpg' %}" alt="">
+                    <span class="insta-items-txt">{{ likes }}</span>
+                    <img class='insta-items' src="{% static 'img/insta-comm.jpg' %}" alt="">
+                    <span class="insta-items-txt">{{ comments }}</span>
+                </div>
+                <div class="insta-items-data">{{ days_from_post }} д.</div>
+            </div>
+        </div>
+        <div class='insta-details-txt'>
+            {{ text }}
+        </div>
+        {% for text, owner, public_date in comments_list %}
+        <div class='insta-details-txt'><span style="font-weight: bold;">{{owner}}</span>   {{text}}<br>{{public_date}}</div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'insta_details' id=next_id %}" class="up950 instadet-arrow-block">
+        {% if next_id != 0 %}
+        <img class='instadet-arrow' style='margin-left: 5px;' src="{% static 'img/arrow-right.png' %}" alt="">
+        {% endif %}
+    </a>
+    </div>
+</div>
+
+<div class="instadet-content down950 mb-5" style="margin: auto;">
+    <div>
+        <a href="{{ link }}">
+            <div class="form-inline" title="В инстаграм">
+                <div class="instadet-pixel-logo-block"><img class="instadet-pixel-logo"
+                                                            src="{% static 'img/insta-pixel-logo.jpg' %}" alt=""></div>
+                <div class="instadet-top-txt">clubpixel.ru</div>
+                <div class="instadet-instalogo-block"><img class="instadet-insta-logo"
+                                                           src="{% static 'img/insta-logo.png' %}" alt=""></div>
+            </div>
+        </a>
+        <hr>
+        <div class="form-inline">
+            <div class="instadet-likes-n-comms"><img class='insta-items' src="{% static 'img/insta-likes.jpg' %}"
+                                                     alt="">
+                <span class="insta-items-txt">{{ likes }}</span>
+                <img class='insta-items' src="{% static 'img/insta-comm.jpg' %}" alt="">
+                <span class="insta-items-txt">{{ comments }}</span>
+            </div>
+            <div class="insta-items-data">{{ days_from_post }} д.</div>
+        </div>
+    </div>
+    <div class='insta-details-txt'>
+        {{ text }}
+    </div>
+    {% for text, owner, public_date in comments_list %}
+    <div class='insta-details-txt'><span style="font-weight: bold;">{{owner}}</span> {{text}}<br>{{public_date}}</div>
+    {% endfor %}
+</div>
+{% endblock %}

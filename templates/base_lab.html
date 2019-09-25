@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html style='' lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="{% static '/img/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static '/css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static '/css/style.css' %}" rel="stylesheet">
+    <title>
+        {% block title %}
+            Pixel Club
+        {% endblock %}
+    </title>
+    {% block description %}
+    {% endblock %}
+    {% block keywords %}
+    {% endblock %}
+    <script src="https://1034.listokcrm.ru/wapi/script?login=1&page=office"></script>
+    <!-- Extending text -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+  	</script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(44375191, "init", {
+            id:44375191,
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            trackHash:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/44375191" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<nav class="row navbar sticky-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #2f2e2ee6;">
+    <div class="redlink_box"><a class='redlink' href="{% url 'admin:index' %}">
+        <img src="{% static 'img/redlink.jpg' %}" alt="">
+    </a></div>
+    <a href="{% url 'main' %}" class="navbar-brand">
+        <img src="{% static '/img/logo.png' %}" width="163" height="42" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto menutext">
+            <li class="nav-item">
+                <a href="{% url 'courses' %}" class="nav-link">Курсы</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'intense' %}" class="nav-link">Интенсивы</a>
+            </li>
+            <li class="nav-item">
+                <a href="http://citycamp.clubpixel.ru" class="nav-link">Лагерь</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'payment' %}" class="nav-link">Оплата</a>
+            </li>
+            <!--<li class="nav-item">-->
+                <!--<a href="{% url 'news:news' %}" class="nav-link">Новости</a>-->
+            <!--</li>-->
+            <li class="nav-item">
+                <a href="{% url 'franchise' %}" class="nav-link">Франшиза</a>
+            </li>
+        </ul>
+
+        <div class="menu-rightblock my-lg-0">
+            <ul class="navbar-nav mr-auto menutext">
+                <li class="nav-item">
+                    <a href="{% url 'main' %}#anchor_adr" class="nav-link scroll">Адреса</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tel:+7(495)150-59-65" class="nav-link">+7(495)150-59-65</a>
+                </li>
+            </ul>
+        <!-- <a href="{% url 'signup' %}"><button class="btn btn-outline-custom my-2 my-sm-0 menutext btn_menu">Записаться</button></a> -->
+      </div>
+      <div class='btn-menu-margin'>
+        <a href="{% url 'signup' %}"><button class="btn btn-outline-custom my-2 my-sm-0 menutext btn_menu">Записаться</button></a>
+      </div>
+    </div>
+</nav>
+
+    {% block content %}
+        There is no any content
+    {% endblock %}
+
+<!-- Footer -->
+<footer class="row page-footer font-small unique-color-light bgfooter">
+
+    <div class="imgfooter"></div>
+
+    <div class="container text-center textfooter">
+        <div class="row text-left">
+            <div class="col h-50" style="width: auto;">
+                <div class="row" style='flex-wrap:nowrap'>
+                    <div class="col-sm-6 mb-2" style="width: auto;padding-right:0;min-width: 120px;padding-left:0;">
+                        <div class="font-weight-bold">Меню:</div>
+                        <a href="{% url 'main' %}"><div>Главная</div></a>
+                        <a class='scroll' href="{% url 'main' %}#anchor-about">
+                            <div>О нас</div>
+                        </a>
+                        <a href="{% url 'courses' %}"><div>Курсы</div></a>
+                        <a href="{% url 'payment' %}"><div>Оплата</div></a>
+                        <a href="#"><div>Галерея</div></a>
+                        <a href="{% url 'news:news' %}"><div>Новости</div></a>
+                        <a href="{% url 'table' %}"><div>Расписание</div></a>
+                        <a href="{% url 'bonus' %}"><div>Пиксель Бонус</div></a>
+                    </div>
+                    <div class="col-sm-6 footer_right_col">
+                        <div class="font-weight-bold">Быстрый доступ:</div>
+                        <a href="{% url 'signup' %}"><div>Записаться на курсы</div></a>
+                        <a href="{% url 'signup' %}"><div>Записаться в лагерь</div></a>
+                        <a href="{% url 'main' %}#anchor_adr2" class="scroll"><div>Адреса филиалов</div></a>
+                        <a href="{% url 'signup' %}"><div>Оставить отзыв</div></a>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-8 posle500" style="min-width:286px;padding-right: 0; padding-left:0;">
+                        <div>2018 Клуб робототехники "Пиксель"</div>
+                        <a href="{% url 'policy' %}"><div>Политика конфиденциальности</div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 h-50 " style="width: auto;">
+                <div class="font-weight-bold">Сотрудничество:</div>
+                <a href="https://podolsk.hh.ru/employer/3518049"><div>Работа в клубе "Пиксель"</div></a>
+                <a href="{% url 'franchise' %}"><h6>Франшиза</h6></a>
+                <div class="do500">
+                    <div class="font-weight-bold mt-3">Контакты:</div>
+                    <div>+7(495)150-59-65<br>+7(906)020-52-50</div>
+                    <a href="mailto:Info@clubpixel.ru"><div class="mb-2">Info@clubpixel.ru</div></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3 footer_padding">
+                <div class="font-weight-bold margin-for-ss">Сообщества:</div>
+                <div class="form-inline">
+                    <a href="https://www.instagram.com/clubpixel.ru/" class="inst_ico ss_ico"></a>
+                    <a href="https://vk.com/clubpixel_ru" class="vk_ico ss_ico"></a>
+                    <a href="https://ok.ru/clubpixel" class="ok_ico ss_ico"></a>
+                    <a href="https://www.facebook.com/clubpixel.ru" class="fb_ico ss_ico"></a>
+                </div>
+                <div class="posle500">
+                    <div class="mt-2 font-weight-bold mt-4">Контакты:</div>
+                    <div>+7(495)150-59-65<br>+7(906)020-52-50</div>
+                    <a href="mailto:info@clubpixel.ru">
+                        <div class="mb-4">Info@clubpixel.ru</div>
+                    </a></div>
+                <div class="form-inline margin_for_lic">
+                    <a href="{% url 'license' %}" class="minlicense mb-3"></a>
+                    <div class="font-weight-bold pt-0 mb-5 ml-2" style="line-height: normal;">Государственная<br>лицензия:<br><br>
+                        <a href="{% url 'license' %}">Смотреть</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 do500" style="width: auto;margin-bottom: 25px;">
+                <div>2018 Клуб робототехники "Пиксель"</div>
+                <a href="{% url 'policy' %}">
+                    <div>Политика конфиденциальности</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{% static '/js/popper.min.js' %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static '/js/bootstrap.min.js' %}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{% static '/js/mdb.min.js' %}"></script>
+<!-- anchor script -->
+</body>
+</html>

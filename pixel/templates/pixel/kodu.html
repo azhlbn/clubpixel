@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Kodu Game Lab | Москва и Московская область | Клуб робототехники Пиксель
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+Программа обучения, описание курсов, сертификаты о дополнительном образовании, конструирование, моделирование и развитие ребенка. Компьютерная грамотность, мелкая моторика, развитие интелекта
+"/>
+{% endblock %}
+{% block keywords %}
+<meta name="keywords" content="
+"/>
+{% endblock %}
+{% block content %}
+
+    <div class="row kodu-block-1bg playfont text-center">
+        <div class="container kinder-block-1">
+            <div class="kinder-title-1" style="color: #fff;">
+                Kodu Game Lab
+            </div>
+            <div class="kinder-title-2" style="color: #fff;">
+                Курс - 36 занятий <br>
+                3 триместра по 12 занятий <br>
+                Курс проходит в учебном году<br>
+                По итогам курса выдается сертификат
+            </div>
+        </div>
+    </div>
+    <div class="container kinder-title-3 playfont py-2">
+        Kodu Game Lab – 1 модуль
+    </div>
+    <div class="kinder-block-2">
+        <div class="kinder-block-3" style="padding: 15px;">
+            <img class='kinder-img-1 autosize-max500' src="{% static '/img/kodu-pic.jpg' %}" alt="" style="height:auto;">
+        </div>
+        <div class="kinder-block-4">
+            <p>Kodu Game Lab — это уникальный конструктор визуального программирования, позволяющий детям без знания языков программирования начать создавать игры. Компания Microsoft потрудилась сделать продукт, в котором ребёнок может построить свой собственный 3D мир, пределом которому служит лишь его воображение.</p>
+            <p>В этом модуле юные программисты познакомятся с логикой программирования, овладеют основными навыками визуального программирования на Kodu, научатся создавать ландшафты и персонажей, познакомятся с такими понятиями как алгоритмы, логические операции и научатся применять их на деле.</p>
+            <p><strong>Пример занятия:</strong></p>
+            <p>На занятии рассказывается о том, какие персонажи существуют, в чём их отличие, какими функциями он может быть наделен, показывается как запрограммировать движение, стрельбу и остальные действия. Затем ребята выполняют самостоятельно задания на закрепление темы занятия.
+В конце занятия, при условии наличия свободного времени, детям дается возможность самостоятельно исследовать игровой мир.</p>
+        </div>
+    </div>
+    <div class="container text-center py-2" style="margin-bottom: 20px;">
+        <a class='scroll' href="{% url 'main' %}#anchor-signup">
+            <button class="btn btn-outline-custom block4-btn2  waves-effect waves-light">Записаться
+            </button>
+        </a>
+    </div>
+
+{% endblock %}

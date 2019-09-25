@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+Фотогалерея Клуб робототехники "Пиксель" | Фото | Фотографии
+{% endblock %}
+{% block description %}
+    <meta name="description" content="Фотогаларея, фото, фотографии, фото альбомы. Фото с занятии, фото лагеря Пиксель, фотографии сборок, фотографии учебных классов, фотографии учеников."/>
+{% endblock %}
+{% block content %}
+    <div class="error-font-title text-center mt-4" style="color: #414141;">Галерея</div>
+    <div class="insta-container">
+        {% for url, text, comments, likes, link, id in insta_items %}
+            <div class="insta-brick">
+                <a href="{% url 'insta_details' id %}" target="_blank">
+                    <img src="{{ url }}"/>
+                    <div class="insta-brick-caption">
+                        <span class="insta-brick-info">
+                            {{ text }}
+                        </span>
+                        <div class="likesNcoms">
+                            {% load static %}
+                            <span><img style='width:19px;height:17px;margin-top:3px;'
+                                       src="{% static 'img/insta-heart.png' %}" alt=""></span>
+                            <span>{{ likes }}</span>
+                            <span><img style='width:19px;height:18px;margin-top:3px;'
+                                       src="{% static 'img/insta-comments.png' %}" alt=""></span>
+                            <span>{{ comments }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

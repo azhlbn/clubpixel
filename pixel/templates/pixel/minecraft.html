@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Minecraft | Москва и Московская область | Клуб робототехники Пиксель
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+Программа обучения, описание курсов, сертификаты о дополнительном образовании, конструирование, моделирование и развитие ребенка. Компьютерная грамотность, мелкая моторика, развитие интелекта
+"/>
+{% endblock %}
+{% block keywords %}
+<meta name="keywords" content="
+"/>
+{% endblock %}
+{% block content %}
+
+    <div class="row minecraft-block-1bg playfont text-center">
+        <div class="container kinder-block-1">
+            <div class="kinder-title-1" style="color: #fff;">
+                Курс Minecraft 8-12 лет
+            </div>
+            <div class="kinder-title-2" style="color: #fff;">
+                Курс - 36 занятий <br>
+                3 триместра по 12 занятий <br>
+                Курс проходит в учебном году<br>
+                По итогам курса выдается сертификат
+            </div>
+        </div>
+    </div>
+    <div class="container kinder-title-3 playfont py-2">
+        Minecraft 1 - компьютерная грамотность с Minecraft
+    </div>
+    <div class="kinder-block-2">
+        <div class="kinder-block-3" style="padding: 15px;">
+            <img class='kinder-img-1 autosize-max500' src="{% static '/img/minecraft-pic.png' %}" alt="">
+        </div>
+        <div class="kinder-block-4">
+            <p>Ребята познакомятся с устройством компьютера, научатся самостоятельно создавать ярлыки и папки, приобретут  базовые умения работы в сети интернет. По прохождении курса, дети смогут уверенно управлять мышкой, печатать на клавиатуре на русском и английском языках, используя горячие клавиши. Полученные знания и  навыки позволят писать коды на языке Python в увлекательной игре Minecraft.</p>
+            <p>Через игру Minecraft ребята изучат основы программирования, понятия переменных, циклов и операторов. С помощью этих знаний ученики смогут создавать собственные программы, задействуя алгоритмическое и пространственные мышление.</p>
+            <p>В результате курса ребята, используя различные алгоритмы, напишут программу, которая будет помогать им в виртуальном мире Minecraft.</p>
+            <p><strong>Пример занятия:</strong></p>
+            <p>На занятии ребята научатся запускать текстовую среду программирования Python IDE и виртуальный сервер игры Minecraft. Затем напишут код, который позволит построить целый дом за считанные секунды, модернизируют код, чтобы у каждого получился уникальный дом и построят целый квартал таких домов с помощью кода.</p>
+        </div>
+    </div>
+    <div class="container text-center py-2" style="margin-bottom: 20px;">
+        <a class='scroll' href="{% url 'main' %}#anchor-signup">
+            <button class="btn btn-outline-custom block4-btn3 waves-effect waves-light">Записаться
+            </button>
+        </a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,564 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html style='' lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="{% static '/img/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static '/css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static '/css/style.css' %}" rel="stylesheet">
+    <title>
+        {% block title %}
+            Pixel Club
+        {% endblock %}
+    </title>
+    {% block description %}
+    {% endblock %}
+    {% block keywords %}
+    {% endblock %}
+
+    <!-- Extending text -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+    </script>
+
+<!-- SCRIPTS START -->
+{##}
+{#    <!-- listok -->#}
+{#    <script src="https://1034.listokcrm.ru/wapi/script?login=1&page=office"></script>#}
+{#    <!-- Global site tag (gtag.js) - Google Analytics -->#}
+{#    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86125983-2"></script>#}
+{#    <script>#}
+{#        window.dataLayer = window.dataLayer || [];#}
+{##}
+{#        function gtag() {#}
+{#            dataLayer.push(arguments);#}
+{#        }#}
+{##}
+{#        gtag('js', new Date());#}
+{##}
+{#        gtag('config', 'UA-86125983-2');#}
+{#    </script>#}
+{#    <!-- Yandex.Metrika counter -->#}
+{#    <script type="text/javascript">#}
+{#        (function (m, e, t, r, i, k, a) {#}
+{#            m[i] = m[i] || function () {#}
+{#                (m[i].a = m[i].a || []).push(arguments)#}
+{#            };#}
+{#            m[i].l = 1 * new Date();#}
+{#            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)#}
+{#        })#}
+{#        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");#}
+{##}
+{#        ym(49402810, "init", {#}
+{#            id: 49402810,#}
+{#            clickmap: true,#}
+{#            trackLinks: true,#}
+{#            accurateTrackBounce: true,#}
+{#            webvisor: true#}
+{#        });#}
+{#    </script>#}
+{#    <noscript>#}
+{#        <div><img src="https://mc.yandex.ru/watch/49402810" style="position:absolute; left:-9999px;" alt=""/></div>#}
+{#    </noscript>#}
+{#    <!-- /Yandex.Metrika counter -->#}
+{#    <style>#}
+{#        @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=cyrillic-ext');#}
+{#    </style>#}
+{#    <!-- yandex maps -->#}
+{#    <script src="https://api-maps.yandex.ru/2.1/?apikey=7e5c1b3b-7da9-46a1-8645-268fbecb4b3b&lang=ru_RU"#}
+{#            type="text/javascript">#}
+{#    </script>#}
+{#    <!-- yandex maps end -->#}
+{#    <!-- VK PIXEL -->#}
+{#    <script type="text/javascript">!function () {#}
+{#        var t = document.createElement("script");#}
+{#        t.type = "text/javascript", t.async = !0, t.src = "https://vk.com/js/api/openapi.js?160", t.onload = function () {#}
+{#            VK.Retargeting.Init("VK-RTRG-357008-f0kil"), VK.Retargeting.Hit()#}
+{#        }, document.head.appendChild(t)#}
+{#    }();</script>#}
+{#    <noscript><img src="https://vk.com/rtrg?p=VK-RTRG-357008-f0kil" style="position:fixed; left:-999px;" alt=""/>#}
+{#    </noscript>#}
+{#    <!-- VK chat -->#}
+{#    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>#}
+
+<!-- SCRIPTS END -->
+
+</head>
+<body>
+<!-- desktop menu start -->
+<nav class="upper1322 row navbar sticky-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #2d2d2d; padding-left: 5px; padding-right: 5px; margin-right: 0 !important;">
+    <div class="container" style="max-width: 1301px;">
+        <div class="redlink_box">
+            <a class='redlink' href="{% url 'admin:index' %}">
+                <img src="{% static 'img/redlink.jpg' %}" alt="">
+            </a>
+        </div>
+        <a href="{% url 'main' %}" class="navbar-brand">
+            <img src="{% static '/img/logo.png' %}" width="182px" height="51px" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-3 menutext">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        О Пиксель
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item scroll" href="{% url 'main' %}#about_pixel">О нас</a>
+                        <a class="dropdown-item" href="{% url 'galery' %}">Галерея</a>
+                        <a class="dropdown-item" href="{% url 'news:news' %}">Новости</a>
+                        <a class="dropdown-item scroll" href="{% url 'main' %}#branches">Адреса</a>
+                        <a class="dropdown-item" href="{% url 'table' %}">Расписание</a>
+                        <a class="dropdown-item" href="{% url 'bonus' %}">Пиксель Бонус</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Курсы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item scroll" href="{% url 'main' %}#courses">Курсы</a>
+                        <a class="dropdown-item" target='_blank' href="https://int.clubpixel.ru/">Интенсивы</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Лагерь
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" target='_blank' href="https://citycamp.clubpixel.ru/">Городской лагерь</a>
+                        <a class="dropdown-item" target='_blank' href="https://camp.clubpixel.ru/">Загородный лагерь</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Сотрудничество
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://mc.clubpixel.ru" target="_blank">Мастер-классы</a>
+                        <a class="dropdown-item" href="https://franchise.clubpixel.ru" target="_blank">Франшиза</a>
+                        <a class="dropdown-item" href="https://podolsk.hh.ru/employer/3518049" target="_blank">Работа</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'payment' %}" class="nav-link">Оплата</a>
+                </li>
+            </ul>
+
+            <div class="menu-rightblock my-lg-0">
+                <ul class="navbar-nav mr-auto menutext" style="padding-top: 10px;">
+                    <li class="nav-item btn-menu-margin">
+                        <a class='scroll' href="{% url 'main' %}#anchor-signup" style="height: 37px;">
+                            <button class="btn btn-outline-custom menutext btn_menu">Записаться</button>
+                        </a>
+                    </li>
+                    <li class="nav-item tel-btn">
+                        <button type="button" data-toggle="modal" data-target="#callback" class="btn btn-callback nav-link">
+                            <img class='tel-ico' src="{% static 'img/tel-ico.png' %}" alt="">
+                            {% if is_franchise %}
+                                <span class="tel-digits">{{ franchise.tel }}</span>
+                            {% else %}
+                                <span class="tel-digits mgo-number">+7(495)150-59-65</span>
+                            {% endif %}
+                        </button>
+                    </li>
+                    <li class="nav-item dropdown cities-margin">
+                        <button class="btn btn-custom-dark dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <img class='maps-and-flags' src="{% static 'img/maps-and-flags.png' %}" alt="">
+                            {{ city_name }}
+                        </button>
+                        <div class="dropdown-menu dropdown-primary dropdown-up">
+                            {% for city in cities %}
+                                {% if city != city_name %}
+                                    <a class="dropdown-item"
+                                       href="{% url 'set_city' city_flag=city.flag %}">{{ city }}</a>
+                                {% endif %}
+                            {% endfor %}
+                            {% for franchise in franchises %}
+                                {% if franchise != city_name %}
+                                    <a class="dropdown-item"
+                                       href="{% url 'set_city' city_flag=franchise.flag %}">{{ franchise }}</a>
+                                {% endif %}
+                            {% endfor %}
+{#                            <a href="{% url 'session_reset' %}">SESSION RESET</a>#}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- mobile menu start -->
+<div class="pos-f-t lower1322 sticky-top">
+    <nav class="navbar navbar-dark bg-dark mobile-navbar">
+        <a href="{% url 'main' %}" class="navbar-brand">
+            <img src="{% static '/img/logo.png' %}" width="150px" alt="logo"></a>
+        <button id='pull' class="navbar-toggler" type="button" data-toggle="" data-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="" style='background-color: #414141;'>
+            <div class='mobile-menu-block'>
+                <div class="accordion mobile-singleblock" id="accordionExample">
+                    <div class="q-card mobile-menu-card" style="background-color: #454545;">
+                        <div class="card-header card-header-mobile" id="headingPixel">
+                            <button class="btn btn-link mobile-menu-btn" type="button" data-toggle="collapse"
+                                    data-target="#collapsePixel" aria-expanded="false" aria-controls="collapsePixel">
+                                <span class='dropdown-toggle-mobile' style='color:#fff'>О Пиксель</span>
+                            </button>
+                        </div>
+                        <div id="collapsePixel" class="collapse mobile-collapse" aria-labelledby="headingPixel"
+                             data-parent="#accordionExample">
+                            <div class="card-body card-body-mobile">
+                                <li><a id='mobile-a' class="dropdown-item dropdown-mobile scroll" href="{% url 'main' %}#about_pixel">О нас</a>
+                                <li><a class="dropdown-item dropdown-mobile" href="{% url 'galery' %}">Галерея</a>
+                                <li><a class="dropdown-item dropdown-mobile" href="{% url 'news:news' %}">Новости</a>
+                                <li><a id='mobile-a' class="dropdown-item dropdown-mobile scroll" href="{% url 'main' %}#branches">Адреса</a>
+                                <li><a class="dropdown-item dropdown-mobile" href="{% url 'table' %}">Расписание</a>
+                                <li><a class="dropdown-item dropdown-mobile" href="{% url 'bonus' %}">Пиксель
+                                    Бонус</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="q-card mobile-menu-card">
+                        <div class="card-header card-header-mobile" id="headingCourses">
+                            <button class="btn btn-link mobile-menu-btn" type="button" data-toggle="collapse"
+                                    data-target="#collapseCourses" aria-expanded="false"
+                                    aria-controls="collapseCourses">
+                                <span class='dropdown-toggle-mobile' style='color:#fff'>Курсы</span>
+                            </button>
+                        </div>
+                        <div id="collapseCourses" class="collapse mobile-collapse" aria-labelledby="headingCourses"
+                             data-parent="#accordionExample">
+                            <div class="card-body card-body-mobile">
+                                <li><a id='mobile-a' class="dropdown-item dropdown-mobile scroll" href="{% url 'main' %}#courses">Курсы</a>
+                                <li><a class="dropdown-item dropdown-mobile"
+                                       href="https://int.clubpixel.ru/">Интенсивы</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="q-card mobile-menu-card" style="background-color: #454545;">
+                        <div class="card-header card-header-mobile" id="headingCamp">
+                            <button class="btn btn-link mobile-menu-btn" type="button" data-toggle="collapse"
+                                    data-target="#collapseCamp" aria-expanded="false" aria-controls="collapseCamp">
+                                <span class='dropdown-toggle-mobile' style='color:#fff'>Лагерь</span>
+                            </button>
+                        </div>
+                        <div id="collapseCamp" class="collapse mobile-collapse" aria-labelledby="headingCamp"
+                             data-parent="#accordionExample">
+                            <div class="card-body card-body-mobile">
+                                <li><a class="dropdown-item dropdown-mobile" href="https://citycamp.clubpixel.ru/">Городской
+                                    лагерь</a>
+                                <li><a class="dropdown-item dropdown-mobile" href="https://camp.clubpixel.ru/">Загородный
+                                    лагерь</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="q-card mobile-menu-card">
+                        <div class="card-header card-header-mobile" id="headingCoop">
+                            <button class="btn btn-link mobile-menu-btn" type="button" data-toggle="collapse"
+                                    data-target="#collapseCoop" aria-expanded="false" aria-controls="collapseCoop">
+                                <span class='dropdown-toggle-mobile' style='color:#fff'>Сотрудничество</span>
+                            </button>
+                        </div>
+                        <div id="collapseCoop" class="collapse mobile-collapse" aria-labelledby="headingCoop"
+                             data-parent="#accordionExample">
+                            <div class="card-body card-body-mobile">
+                                <li><a id='mobile-a' class="dropdown-item dropdown-mobile" href="https://mc.clubpixel.ru" target="_blank">Мастер-классы</a>
+                                <li><a class="dropdown-item dropdown-mobile" href="https://franchise.clubpixel.ru" target="_blank">Франшиза</a>
+                                <li><a class="dropdown-item dropdown-mobile"
+                                       href="https://podolsk.hh.ru/employer/3518049" target="_blank">Работа</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="q-card mobile-menu-card" style="background-color: #454545;">
+                        <div class="card-header card-header-mobile">
+                            <button onclick="location.href='{% url 'payment' %}'" class="btn btn-link mobile-menu-btn"
+                                    type="button">
+                                <span style='color:#fff'>Оплата</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mobile-signup-btn">
+                        <a id='mobile-a' class='scroll' href="{% url 'main' %}#anchor-signup-2" style="height: 37px;">
+                            <button class="btn btn-outline-custom menutext btn_menu"
+                                    style='width: 180px;margin-left: 0;'>Записаться
+                            </button>
+                        </a>
+                    </div>
+                    <div class="mobile-tel">
+                        <a href="tel:+7(495)150-59-65" class="nav-link" style="padding-top: 6px !important;">
+                            <img class='tel-ico' src="{% static 'img/tel-ico.png' %}" alt="">
+                            {% if is_franchise %}
+                                <span class="tel-digits">{{ franchise.tel }}</span>
+                            {% else %}
+                                <span class="tel-digits mgo-number">+7(495)150-59-65</span>
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="mobile-cities">
+                        <button class="btn btn-custom-dark dropdown-toggle" type="button" id="dropdownMenu1"
+                                data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" style='background-color: unset !important; width: 180px;'>
+                            <img class='maps-and-flags' src="{% static 'img/maps-and-flags.png' %}" alt="">
+                            {{ city_name }}
+                        </button>
+                        <div class="dropdown-menu dropdown-primary dropdown-up mobile-dropdown-cities">
+                            {% for city in cities %}
+                                {% if city != city_name %}
+                                    <a class="dropdown-item dropdown-mobile"
+                                       href="{% url 'set_city' city_flag=city.flag %}">{{ city }}</a>
+                                {% endif %}
+                            {% endfor %}
+                            {% for franchise in franchises %}
+                                {% if franchise != city_name %}
+                                    <a class="dropdown-item"
+                                       href="{% url 'set_city' city_flag=franchise.flag %}">{{ franchise }}</a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="mobile-empty-block">
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- mobile menu end -->
+
+{% block content %}
+    There is no any content
+{% endblock %}
+
+<!-- Footer -->
+<div class="before-footer-row"></div>
+<footer class="row page-footer font-small unique-color-light bgfooter">
+    <div class="container text-center textfooter">
+        <div class="row text-left">
+            <div class="col h-50" style="width: auto;">
+                <div class="row" style='flex-wrap:nowrap'>
+                    <div class="col-sm-6 mb-2" style="width: auto;padding-right:0;min-width: 120px;padding-left:0;">
+                        <div class="font-weight-bold mb-3">О Пиксель</div>
+                        <a class='scroll' href="{% url 'main' %}#about_pixel">О нас</a>
+                        <a href="{% url 'galery' %}"><div>Галерея</div></a>
+                        <a href="{% url 'news:news' %}"><div>Новости</div></a>
+                        <a href="{% url 'main' %}#branches" class="scroll"><div>Адреса</div></a><br>
+                        <a href="{% url 'table' %}"><div>Расписание</div></a>
+                        <a href="{% url 'bonus' %}"><div>Пиксель Бонус</div></a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSegmLhK-RzWohvFv87S1RCjtr-Uur7-idufr6OLoH3KX83eww/viewform" target='_blank'><div>Оставить отзыв</div></a>
+                    </div>
+                    <div class="col-sm-6 footer_right_col">
+                        <div class="font-weight-bold mb-3">Курсы</div>
+                        <a class='scroll' href="{% url 'main' %}#courses"><div>Курсы</div></a>
+                        <a href="https://int.clubpixel.ru/" target="_blank"><div>Интенсивы</div></a>
+                        <div class="font-weight-bold my-3">Лагерь</div>
+                        <a href="https://citycamp.clubpixel.ru/" target="_blank"><div>Городской лагерь</div></a>
+                        <a href="https://camp.clubpixel.ru/" target="_blank"><div>Загородный лагерь</div></a>
+                        <div class="font-weight-bold my-3"><a href="{% url 'payment' %}">Оплата</a></div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-8 posle500" style="min-width:286px;padding-right: 0; padding-left:0;">
+                        <div>® 2017-2019 Клуб робототехники "Пиксель"</div>
+                        <a href="{% url 'policy' %}"><div>Политика конфиденциальности</div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 h-50 " style="width: auto;">
+                <div class="font-weight-bold mb-3">Сотрудничество:</div>
+                <a href="" target="_blank">Мастер-классы</a><br>
+                <a href="https://franchise.clubpixel.ru" target="_blank">Франшиза</a>
+                <a target='_blank' href="https://podolsk.hh.ru/employer/3518049"><div>Работа</div></a>
+                <div class="do500">
+                    <div class="font-weight-bold mt-3">Контакты:</div>
+                    {% if is_franchise %}
+                        <div class="">{{ franchise.tel }}</div>
+                    {% else %}
+                        <div class="mgo-number">+7(495)150-59-65<br>+7(906)020-52-50</div>
+                    {% endif %}
+                    <a href="mailto:Info@clubpixel.ru"><div class="mb-2">info@clubpixel.ru</div></a>
+                </div>
+            </div>
+
+            <div class="col-sm-3 footer_padding">
+                <div class="font-weight-bold margin-for-ss mb-3">Сообщества:</div>
+                <div class="form-inline">
+                    <a href="https://www.instagram.com/clubpixel.ru/" class="inst_ico ss_ico"></a>
+                    <a href="https://vk.com/clubpixel_ru" class="vk_ico ss_ico"></a>
+                    <a href="https://ok.ru/clubpixel" class="ok_ico ss_ico"></a>
+                    <a href="https://www.facebook.com/clubpixel.ru" class="fb_ico ss_ico"></a>
+                </div>
+                <div class="posle500">
+                    <div class="mt-2 font-weight-bold mt-4">Контакты:</div>
+                    {% if is_franchise %}
+                        <div class="">{{ franchise.tel }}</div>
+                    {% else %}
+                        <div class="mgo-number">+7(495)150-59-65<br>+7(906)020-52-50</div>
+                    {% endif %}
+                    <a href="mailto:info@clubpixel.ru">
+                        <div class="mb-4">info@clubpixel.ru</div>
+                    </a></div>
+                <div class="form-inline margin_for_lic">
+                    <a href="{% url 'license' %}" class="minlicense mb-3"></a>
+                    <div class="font-weight-bold pt-0 mb-5 ml-2" style="line-height: normal;">Государственная<br>лицензия:<br><br>
+                        <a href="{% url 'license' %}">Смотреть</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 do500" style="width: auto;margin-bottom: 25px;">
+                <div>® 2017-2019 Клуб робототехники "Пиксель"</div>
+                <a href="{% url 'policy' %}">
+                    <div>Политика конфиденциальности</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- callback modal -->
+<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="callback-start">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method='GET'>
+                  <div class="modal-body">
+                      <div class="form-group">
+                          <input style='border-radius: 15px;' id="client_name" class="form-control" maxlength='50' type="text" name="client_name"
+                                 placeholder="Ваше имя" required>
+                      </div>
+                      <div class="form-group">
+                          <input style='border-radius: 15px;' id="client_tel" class="form-control" maxlength='30' type="text" name="client_tel"
+                                 placeholder="Номер телефона" required>
+                      </div>
+                      <div class="form-group custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" value="" id="customCheck1" required>
+                        <label class="custom-control-label" for="customCheck1">
+                          Подтверждаю, что я ознакомлен и согласен с <a href='{% url 'policy' %}' target="_blank">политикой конфиденциальности</a>
+                        </label>
+                      </div>
+                      <div class="modal-footer" style="margin:15px 0 0 0;padding-bottom:0;">
+                          <button id='callback_btn'
+                                  class="btn btn-outline-custom menutext btn_menu waves-effect waves-light"
+                                  style="width: 200px;height:39px;font-size: 16px !important;" type='button'>Отправить
+                          </button>
+                      </div>
+                  </div>
+                </form>
+            </div>
+            <div class="callback-success invisible">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="callback-success-txt">В ближайшее время с Вами свяжется наш менеджер.</div>
+                <div class="callback-img-block"><img style='width: 100px;' src="{% static '/img/big-logo.png' %}" alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<!-- callback -->
+<script>
+    $("#callback_btn").click(function () { // исполняется функция при нажатии на кнпоку с id callback_btn
+      var chbox;
+      chbox=document.getElementById('customCheck1');
+        $.ajax({
+            type: "GET", // тип запроса
+            url: "callback", // сам url, не имя(name)
+            data: {
+                'client_name': $("#client_name").val(),
+                'client_tel': $("#client_tel").val(),
+                'client_check': chbox.checked,
+            },
+            dataType: "text",
+            cache: false,
+            success: function (data) {
+                if (data == 'Success') {
+                    console.log("Заебись"); //возращается ответ через return HttpResponse('ok'). И если 'ok', то в консоль выводится 'yes'
+                    $(".callback-start").addClass("invisible");
+                    $(".callback-success").removeClass('invisible');
+                    setTimeout(function () {
+                        document.querySelector('.close').click()
+                        $(".callback-success").addClass('invisible');
+                    }, 3000);
+                    setTimeout(function () {
+                        $(".callback-start").removeClass("invisible");
+                    }, 4000);
+                } else if (data == 'Fail') {
+                    console.log('Нихуя');
+                }
+            }
+        })
+    })
+</script>
+
+<!-- closing mobile menu after click on anchor -->
+<script>
+    $(function () {
+        menu = $('#navbarToggleExternalContent');
+        menuHeight = menu.height();
+
+        $('#pull, #mobile-a').on('click', function(e) {
+            {#e.preventDefault();#}
+            menu.slideToggle();
+        });
+    });
+</script>
+<!-- VK chat -->
+<script class='upper669' type="text/javascript">
+    VK.Widgets.CommunityMessages("vk_community_messages", 131268889, {
+        expandTimeout: "120000",
+        disableExpandChatSound: "1",
+        disableNewMessagesSound: "1",
+        tooltipButtonText: "Появились вопросы?"
+    });
+</script>
+<!-- JQuery -->
+<script type="text/javascript" src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{% static '/js/popper.min.js' %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static '/js/bootstrap.min.js' %}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{% static '/js/mdb.min.js' %}"></script>
+<!-- calltracker -->
+<script>
+    (function(w, d, u, i, o, s, p) {
+        if (d.getElementById(i)) { return; } w['MangoObject'] = o;
+        w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments) }; w[o].u = u; w[o].t = 1 * new Date();
+        s = d.createElement('script'); s.async = 1; s.id = i; s.src = u;
+        p = d.getElementsByTagName('script')[0]; p.parentNode.insertBefore(s, p);
+    }(window, document, '//widgets.mango-office.ru/widgets/mango.js', 'mango-js', 'mgo'));
+    mgo({calltracking: {id: 18190, elements: [{"selector":".mgo-number"}]}});
+</script>
+</body>
+</html>

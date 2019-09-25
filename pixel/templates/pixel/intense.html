@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Интенсив | Москва и Московская область | Клуб робототехники Пиксель
+{% endblock %}
+{% block description %}
+<meta name="description" content="
+    Интенсив | Москва и Московская область | Клуб робототехники Пиксель
+"/>
+{% endblock %}
+
+{% block keywords %}
+    <meta name="keywords" content="
+    лагерь подольск, лагерь мечта подольск, лагерь ромашка подольск, лагерь родина подольск, детский лагерь в подольске, лагерь чехов, лагерь климовск, лагерь кузнечики
+"/>
+{% endblock %}
+{% block content %}
+
+    <div class="row intense-one">
+        <div class="container">
+            <div class="col-12 text-center mt-4 mb-2" style="padding-left: 0; padding-right: 0;">
+                <span class="title-intense">Интенсивы по робототехнике</span>
+            </div>
+            <div class="row mt-1 posle862">
+                <div class="container intense-btn-col text-center">
+                    <a class='scroll' href="#description">
+                        <button class="btn btn-outline-custom intense_btn">Описание</button>
+                    </a>
+                    <a class='scroll px-5' href="#programm">
+                        <button class="btn btn-outline-custom intense_btn">Программа</button>
+                    </a>
+                    <a class='scroll' href="#table">
+                        <button class="btn btn-outline-custom intense_btn">Расписание</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 text-center do862" style="padding-left:0; padding-right: 0;">
+                <span class="intense-txt-1">При раннем бронировании скидка на интенсив <span style='font-size: 16px; color: #00b500;'>10%</span></span>
+                <div class='mt-2'>
+                  <a href="{% url 'signup' %}"><button class="btn btn-outline-custom intense_btn intense_btn_2">Получить скидку</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intense-anchor1" id="description"></div>
+    <div class="courses-two py-3">
+        <div class="col-12 text-center">
+            <div class="title-intense">Описание интенсивов</div>
+            <div class="row dots mt-2"></div>
+            <div class="container intense-txt-2 intense-txt-block">
+                <span style='font-weight: bold;'>Интенсив</span> – это недельный курс робототехники, на котором ребята построят самые большие и функциональные сборки, запрограммируют их и испытают в работе!<br>
+                    Интенсив подходит тем, кто уже занимается робототехникой, и тем, кто хочет в кратчайшие сроки окунуться в мир робототехники целиком и полностью. Это отличная возможность для учеников, чья нагрузка во время учебного года не позволяет попробовать что-то новое.<br>
+                    Уникальность интенсива  – это возможность полностью погрузиться в робототехнику всего за пять дней, а трехчасовой формат позволяет сделать сложные технические сборки, которые содержат большую часть элементов набора, ведь именно таких сборок ожидают ребята, когда думают о робототехнике.
+            </div>
+        </div>
+
+        <div class="row text-center">
+          <div class='container text-center mt-4 desktop-hide2' style='min-width: 1100px;'>
+            <img src="{% static 'img/intense-img-2.png' %}" alt="">
+          </div>
+          <div class="container desktop-hide2" style='min-width: 1100px;'>
+            <div class="row text-center" style='min-width: 1100px;'>
+              <div class="intense-txt-3 intense-margin" style='color:#00a5d5;'>
+                5 дней - с пн. по пт.
+  15 часов робототехники за неделю
+              </div>
+              <div class="intense-txt-3" style='margin-left: 45px; color:#ff0000;'>
+                Каждое занятие по 3 часа (180 минут)
+              </div>
+              <div class="intense-txt-3" style='margin-left: 40px; color:#ffc800;'>
+                От 6 до 14 лет
+  группы формируются по возрасту
+              </div>
+              <div class="intense-txt-3" style='margin-left: 40px; color:#00AB4E;'>
+                Группы до 8  детей
+  индивидуальный подход
+              </div>
+              <div class="intense-txt-3" style='margin-left: 60px; color:#00a5d5;'>
+                Недельный интенсив 5000 руб.
+              </div>
+            </div>
+            <div class="title2-intense desktop-hide">При раннем бронировании скидка на интенсив <span style='color: #40af18; font-size: 40px;'>10%</span></div>
+            <a href="{% url 'signup' %}">
+                <button class="btn btn-outline-custom intense_btn mb-4" style='width: 250px;'>Получить скидку</button>
+            </a>
+          </div>
+        </div>
+    </div>
+    <div class="intense-anchor1" id="programm"></div>
+    <div class="col-12 text-center py-3 playfont">
+        <div class="title-intense">Программа</div>
+        <div class="row dots mt-2"></div>
+        <div class="intense-block">
+          <div class="intense-block-img">
+            <img src="{% static 'img/intense-img-3.png' %}" alt="">
+            <div class="block-intense-txt">
+              <div class="intense-block1-txt1">6-9</div>
+              <div class="intense-block1-txt2">лет</div>
+              <div class="intense-block1-txt3">
+                <div style='font-weight: bold;'>Возраст от 6-9 лет</div>
+                <div class="">
+                  <br>
+                  15-ти часовая программа<br>
+                  5 дней с пн.-пт.<br>
+                  Каждое занятие по 3 часа<br><br>
+                  Оборудование:<br>
+                  Lego WeDo<br>
+                  Ресурсный набор Lego WeDo<br>
+                  ПО Lego Education WeDo<br><br>
+                  Стоимость: 5000 рублей
+                </div>
+                <a href="{% url 'signup' %}">
+                    <button class="btn btn-outline-custom intense_block_btn1">Записаться</button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="intense-block-img">
+            <img src="{% static 'img/intense-img-4.png' %}" alt="">
+            <div class="block-intense-txt">
+              <div class="intense-block2-txt1">10-14</div>
+              <div class="intense-block2-txt2">лет</div>
+              <div class="intense-block2-txt3">
+                <div style='font-weight: bold;'>Возраст от 10-14 лет</div>
+                <div class="">
+                  <br>
+                  15-ти часовая программа<br>
+                  5 дней с пн.-пт.<br>
+                  Каждое занятие по 3 часа<br><br>
+                  Оборудование:<br>
+                  Lego Mindstorms EV3<br>
+                ПО Lego Education Mindstorms<br><br>
+                  Стоимость: 5000 рублей
+                </div>
+                <a href="{% url 'signup' %}">
+                    <button class="btn btn-outline-custom intense_block_btn2">Записаться</button>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="intense-anchor1" id="table"></div>
+    <div class="intense-two">
+      <div class="intense-two-block">
+        <div class="title-intense" style='color: #fff; text-align:center;'>Расписание</div>
+        <div class="row dots2 mt-2"></div>
+        <div id="cat" class='intense-two-slideblock'>
+          <div class='intense-two-txt form-inline'>
+            <div class='intense-two-title'><a>г. Подольск Советская пл. д. 3, ДЦ "Пахра" 3 этаж офис 32А</a></div>
+            <div class='intense-two-arrow'><a><img src="{% static 'img/arrow1.png' %}" alt=""></a></div>
+          </div>
+      	        <p class='intense-two-insidetxt'>
+                  Даты: с 25.03.2019 по 29.03.2019, время с 13:30 до 16:30 - возраст с 6-9 лет<br>
+                  Даты: с 25.03.2019 по 29.03.2019, время с 17:00 до 20:00 - возраст с 10-14 лет
+      	        </p>
+              <hr class='intense-line'>
+          <div class='intense-two-txt form-inline'>
+            <div class='intense-two-title'><a>г. Чехов ул. Московская д.44 3 этаж офис 313</a></div>
+            <div class='intense-two-arrow'><a><img src="{% static 'img/arrow1.png' %}" alt=""></a></div>
+          </div>
+      	        <p class='intense-two-insidetxt'>
+                  Даты: с 08.04.2019 по 12.04.2019, время с 13:30 до 16:30 - возраст с 6-9 лет<br>
+                  Даты: с 08.04.2019 по 12.04.2019, время с 17:00 до 20:00 - возраст с 10-14 лет
+      	        </p>
+                <hr class='intense-line'>
+          <div class='intense-two-txt form-inline'>
+            <div class='intense-two-title'><a>г. Серпухов Борисовское ш. 1 ГТРК "Корстон" 3 этаж Коворкинг "Старт"</a></div>
+            <div class='intense-two-arrow'><a><img src="{% static 'img/arrow1.png' %}" alt=""></a></div>
+          </div>
+      	        <p class='intense-two-insidetxt'>
+                  Даты: с 25.03.2019 по 29.03.2019, время с 13:30 до 16:30 - возраст с 6-9 лет<br>
+                  Даты: с 25.03.2019 по 29.03.2019, время с 17:00 до 20:00 - возраст с 10-14 лет
+      	        </p>
+                <hr class='intense-line'>
+          <div class='intense-two-txt form-inline'>
+            <div class='intense-two-title'><a>г. Домодедово, Каширское ш. 7 БЦ "Орёл" 1 этаж офис 59</a></div>
+            <div class='intense-two-arrow'><a><img src="{% static 'img/arrow1.png' %}" alt=""></a></div>
+          </div>
+      	        <p class='intense-two-insidetxt'>
+                  Даты: с 25.03.2019 по 29.03.2019, время с 13:30 до 16:30 - возраст с 6-9 лет<br>
+                  Даты: с 25.03.2019 по 29.03.2019, время с 17:00 до 20:00 - возраст с 10-14 лет
+      	        </p>
+                <hr class='intense-line'>
+      	</div>
+        <a href="{% url 'signup' %}">
+            <button class="btn btn-outline-custom intense-two-btn">Записаться</button>
+        </a>
+      </div>
+    </div>
+<script>
+$(function() {
+    $("#cat p").hide();
+    $("#cat div").click(function() {
+        $(this).next("p").slideToggle("slow").siblings("p:visible").slideUp("slow");
+    });
+});
+</script>
+{% endblock %}

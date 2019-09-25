@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+Как пройти в Клуб робототехники "Пиксель" м. Южная
+{% endblock %}
+{% block content %}
+
+    <div class="container playfont py-4">
+        <div class="serpuhov-title">
+            <p>г. Москва, м. Южная, ул. Кировоградская, д.8, к.3, Языковой центр "School Park"</p>
+            <span>Как нас найти?</span>
+        </div>
+        <div class="serpuhov-txt">
+            Мы находимся по адресу: г. Москва, м. Южная, ул. Кировоградская, д.8, к.3, Языковой центр "School Park"<br>
+            1. Занятия проходят на базе Языкового центра "School Park";<br>
+            2. Выходите из м. Южное и идете 5-7 минут по ул. Кировоградская в сторону "Школьного парка";<br>
+            3. Вход в жилом доме со стороны дороги, Вы увидите красную вывеску "Английский язык" (см. фото 1,2);<br>
+            4. Проходите вперед до двери под вывеской (см. фото 3);<br>
+            5. Слева по коридору вход в Языковой центр "School Park" (см. фото 4,5,6)<br><br>
+            ​
+            Появились вопросы, звоните:<br>
+            тел: +7(495)150-59-65<br>
+            тел: +7(906)020-52-50<br><br>
+            ​
+            Ждем Вас на занятиях!
+        </div>
+    </div>
+    <div class="serpuhov-imgs">
+        <img class="serpuhov-img" src="{% static 'img/metro-u-img-1.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/metro-u-img-2.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/metro-u-img-3.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/metro-u-img-4.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/metro-u-img-5.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/metro-u-img-6.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/metro-u-img-7.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/metro-u-img-8.jpg' %}" alt="">
+    </div>
+
+{% endblock %}

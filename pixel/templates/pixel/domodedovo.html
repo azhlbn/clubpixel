@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+Как пройти в Клуб робототехники "Пиксель" в г. Домодедово
+{% endblock %}
+{% block content %}
+
+    <div class="container playfont py-4">
+        <div class="serpuhov-title">
+            <p>МО, г. Домодедово, Каширское ш. 7 БЦ "Орёл" 1 этаж офис 59.</p>
+            <span>Как нас найти?</span>
+        </div>
+        <div class="serpuhov-txt">
+            Мы находимся по адресу: МО, г. Домодедово, Каширское ш. 7 БЦ "Орёл" 1 этаж офис 059.<br>
+            1. Заходите в центральный вход БЦ "Орёл" (см. фото 1);<br>
+            2. После входа, проходите в сторону ресепшна (см. фото 2);<br>
+            3. Справа от ресепшна лестница, под лестницей справа проход в другой корпус (см. фото 3);<br>
+            4. Проходите вперед по коридору , после зоны ожидания поворачиваете налево (см. фото 4,5,6);<br>
+            5. Проходите вперед, слева наш офис (см. фото 7,8 и 9);<br><br>
+            ​
+            Появились вопросы, звоните:<br>
+            тел: +7(495)150-59-65<br>
+            тел: +7(906)020-52-50<br><br>
+            ​
+            Ждем Вас на занятиях!
+        </div>
+    </div>
+    <div class="serpuhov-imgs">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-1.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-2.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-3.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-4.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-5.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-6.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-7.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-8.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-9.jpg' %}" alt="">
+        <img class="serpuhov-img" src="{% static 'img/domodedovo-img-10.jpg' %}" alt="">
+    </div>
+
+{% endblock %}
