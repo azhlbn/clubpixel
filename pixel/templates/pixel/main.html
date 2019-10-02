@@ -14,19 +14,7 @@
 {% endblock %}
 
 {% block content %}
-{#    <div class="row">#}
-{#        <div class="container text-center mt-3">#}
-{#            {% for course_block in courses_blocks.object_list %}#}
-{#                {{ course_block.name }}<br>#}
-{#            {% endfor %}#}
-{#            {% if courses_blocks.has_next %}#}
-{#                <div class="my-3">#}
-{#                    <button class="btn custom-test-btn" id='courses_pagination'>Показать еще</button>#}
-{#                </div>#}
-{#            {% endif %}#}
-{#        </div>#}
-{#    </div>#}
-    <div id="vk_community_messages"></div>
+    <div class='upper669' id="vk_community_messages"></div>
     <!-- start slider -->
     <div id="carouselExampleControls" class="carousel slide carousel-fade slider_my mb-2" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -215,7 +203,7 @@
     <div class="row">
         <div class="block4-container">
             <div class="block4-title">Курсы</div>
-            <div class="nav-item dropdown block4-btn-block">
+            <div class="nav-item dropdown block4-btn-block" style="left:-20px;">
                 <button class="btn dropdown-toggle block4-btn" type="button" id="dropdownMenu1"
                         data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
@@ -247,45 +235,17 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="block4-courses">
-                {% for course in courses %}
-                    {% if course.age_min <= max_age and course.age_max >= min_age %}
-                        {% if course.name in courses_list %}
-                            <div class="block4-kinder">
-                                <img src="{{ course.bg_image.url }}" alt="">
-                                <div class="block4-kinder-content">
-                                    <div class="block4-kinder-age">{{ course.age_min }}-{{ course.age_max }}<br><div class="block4-kinder-age2">лет</div></div>
-                                    <div class="block4-kinder-description">
-                                        <div class="block4-kinder-title">{{ course.name }}</div>
-                                        <li><span class="block4-kinder-description-txt">{{ course.string_1 }}</span>
-                                        <li><span class="block4-kinder-description-txt">{{ course.string_2 }}</span>
-                                        <li><span class="block4-kinder-description-txt">{{ course.string_3 }}</span>
-                                    </div>
-                                    <a href="{{ course.url }}">
-                                        <button class="btn btn-outline-custom block4-btn-kinder1">Подробнее</button>
-                                    </a>
-                                    <a class='scroll' href="{% url 'main' %}#anchor-signup">
-                                        {% if course.btn_color == 'Желтый' %}
-                                            <button class="btn btn-outline-custom block4-btn-kinder2">Запишись сейчас</button>
-                                        {% endif %}
-                                        {% if course.btn_color == 'Синий' %}
-                                            <button class="btn btn-outline-custom block4-btn3">Запишись сейчас</button>
-                                        {% endif %}
-                                        {% if course.btn_color == 'Красный' %}
-                                            <button class="btn btn-outline-custom block4-btn2">Запишись сейчас</button>
-                                        {% endif %}
-                                    </a>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
+            <div class="do862 endless_page_template">
+            {% include "pixel/mobile_courses.html" %}
+            </div>
+            <div class="posle862 endless_page_template" style="margin-top: 50px;">
+            {% include "pixel/desktop_courses.html" %}
             </div>
         </div>
     </div>
     <!-- block four end -->
     <!-- news block start -->
-    <div class="row">
+    <div class="row mt-4">
         <div class="news-container">
             <div class="block5-title">
                 Новости Клуба "Пиксель"
@@ -1225,7 +1185,7 @@
                                     <option>Запись на пробное занятиe</option>
                                     <option>Запись на интенсивы</option>
                                     <option>Запись в городской лагерь</option>
-                                    <option>Запись в летний лагерь</option>
+                                    <option>Запись в загородный лагерь</option>
                                 </select>
                             </div>
                         </div>
@@ -1282,8 +1242,7 @@
                 </div>
                 <div class="form-text-block" style="margin-top: 18px; margin-left: -2px; font-size: 16px;">
                     <div class="form-group">
-                        <select class='select-custom1' id="branches" type="text" name="branches"
-                                class="order_branches form-control-custom" style="">
+                        <select class='select-custom1 order_branches form-control-custom' id="branches" type="text" name="branches" style="">
                             <option selected>Филиал</option>
                             {% for branch in branches %}
                                 <option>{{ branch.adr }}</option>
@@ -1595,4 +1554,10 @@
         ssb.scrollbar('scrollcontainer'); // scrollbar initialization
       }
     </script>
+    {% block js %}
+      {{ block.super }}
+      <script>
+        $.endlessPaginate();
+      </script>
+    {% endblock %}
 {% endblock %}

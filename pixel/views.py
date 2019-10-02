@@ -9,6 +9,7 @@ from signup.models import SignupModel, Franchise
 from news.models import News
 from django.core.paginator import Paginator
 import json
+from el_pagination.decorators import page_template
 
 # Create your views here.
 
@@ -31,7 +32,11 @@ def set_city(request, city_flag):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-def main(request, current_page=1):
+@page_template('pixel/desktop_courses.html', key='desktop_courses')
+@page_template('pixel/mobile_courses.html', key='mobile_courses')
+
+
+def main(request, template='pixel/main.html', extra_context=None):
     city_flag = request.session.get('flag_in_session', False)
     created_signup_model = '' #empty model
     last_news_1 = News.objects.order_by('-date')[0]
@@ -77,7 +82,8 @@ def main(request, current_page=1):
                                   fail_silently=False)
                         send_mail(email_subject, email_body, settings.EMAIL_HOST_USER, ['info@clubpixel.ru'],
                                   fail_silently=False)
-                        send_mail(email_subject, email_body, settings.EMAIL_HOST_USER, ['17192671.202213@parser.amocrm.ru'],
+                        send_mail(email_subject, email_body, settings.EMAIL_HOST_USER,
+                                  ['17192671.203237@parser.amocrm.ru'],
                                   fail_silently=False)
                         break
 
@@ -89,7 +95,7 @@ def main(request, current_page=1):
     questions = Questions.objects.all()
     branches = Branches.objects.all()
     franchises = Franchise.objects.all()
-    # courses = Courses.objects.all().order_by('age_min')
+    courses = Courses.objects.all().order_by('age_min')
 
     min_age = int(request.session.get('min_age', 5))
     max_age = int(request.session.get('max_age', 15))
@@ -198,15 +204,15 @@ def main(request, current_page=1):
     except:
         fb3 = ''
 
+    # if request.is_ajax():
+    #     template = desktop_courses
 
-    all_courses = Courses.objects.all().order_by('age_min')
-    pag = Paginator(all_courses, 3)
-    courses = []
-    for page in range(1, current_page+1):
-        for object in pag.page(page).object_list:
-            courses.append(object)
-
-
+    filtered_list_of_courses = []
+    filtered_list_of_mobile_courses = []
+    for course in courses:
+        if course.age_min <= max_age and course.age_max >= min_age and course.name in courses_list:
+            filtered_list_of_courses.append(course)
+            filtered_list_of_mobile_courses.append(course)
 
     context = {
         'slider': slider,
@@ -218,7 +224,8 @@ def main(request, current_page=1):
         'city_flag': city_flag,
         'branches_in_city': branches_in_city,
         'all_branches': all_branches,
-        'courses': courses,
+        'courses': filtered_list_of_courses,
+        'mobile_courses_list': filtered_list_of_mobile_courses,
         'courses_list': courses_list,
         'branches_and_franchises': branches_and_franchises,
         'last_news_1': last_news_1,
@@ -231,9 +238,53 @@ def main(request, current_page=1):
         'fb2': fb2,
         'fb3': fb3,
         'all_fb': fb_list,
+        'mobile_courses': 'pixel/mobile_courses.html',
+        'desktop_courses': 'pixel/desktop_courses.html',
     }
 
-    return render(request, 'pixel/main.html', context)
+    if extra_context is not None:
+        context.update(extra_context)
+
+    return render(request, template, context)
+
+
+# def mobile_courses(request, template='pixel/mobile_courses.html', extra_context=None):
+#     courses = Courses.objects.all().order_by('age_min')
+#     city_flag = request.session.get('flag_in_session', False)
+#     min_age = int(request.session.get('min_age', 5))
+#     max_age = int(request.session.get('max_age', 15))
+#
+#     try:
+#         if city_flag and city_flag != 'favicon.ico' and city_flag is not None:
+#             city = Cities.objects.get(flag=city_flag)
+#         else:
+#             try:
+#                 city = Franchise.objects.get(flag=city_flag)
+#             except:
+#                 city = Cities.objects.get(flag='all')
+#     except:
+#         try:
+#             city = Franchise.objects.get(flag=city_flag)
+#         except:
+#             city = Cities.objects.get(flag='all')
+#
+#     courses_list = []
+#     for course in city.courses.all():
+#         courses_list.append(str(course))
+#
+#     filtered_list_of_courses = []
+#     for course in courses:
+#         if course.age_min <= max_age and course.age_max >= min_age and course.name in courses_list:
+#             filtered_list_of_courses.append(course)
+#
+#     context = {
+#         'courses': filtered_list_of_courses,
+#     }
+#
+#     if extra_context is not None:
+#         context.update(extra_context)
+#
+#     return render(request, template, context)
 
 
 def sports_group(request):

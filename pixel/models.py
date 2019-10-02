@@ -214,7 +214,7 @@ class Feedbacks(models.Model):
     feedback_text = models.TextField(verbose_name='Текст отзыва')
     stars = models.IntegerField(choices=number_of_stars, verbose_name='Количество звезд')
     date = models.DateTimeField(auto_now_add=True, verbose_name='Дата отзыва')
-    client_photo = models.ImageField(upload_to='feedback_clients_photos', default='default-fb-photo.png', verbose_name='Фото клиента')
+    client_photo = models.ImageField(upload_to='feedback_clients_photos', default='default-fb-photo.png', verbose_name='Фото клиента', help_text='Изображение должно быть круглым с вырезанным фоном')
 
     class Meta:
         verbose_name = 'Отзыв'

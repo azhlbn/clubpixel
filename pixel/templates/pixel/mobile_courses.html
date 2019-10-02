@@ -1,0 +1,40 @@
+{% load el_pagination_tags %}
+
+{% paginate 3 mobile_courses_list using "mobile_courses" %}
+<div class="block4-courses">
+    {% if mobile_courses_list %}
+    {% for course in mobile_courses_list %}
+    <div class="block4-kinder">
+        <img src="{{ course.bg_image.url }}" alt="">
+        <div class="block4-kinder-content">
+            <div class="block4-kinder-age">{{ course.age_min }}-{{ course.age_max }}<br>
+                <div class="block4-kinder-age2">лет</div>
+            </div>
+            <div class="block4-kinder-description">
+                <div class="block4-kinder-title">{{ course.name }}</div>
+                <li><span class="block4-kinder-description-txt">{{ course.string_1 }}</span>
+                <li><span class="block4-kinder-description-txt">{{ course.string_2 }}</span>
+                <li><span class="block4-kinder-description-txt">{{ course.string_3 }}</span>
+            </div>
+            <a href="{{ course.url }}">
+                <button class="btn btn-outline-custom block4-btn-kinder1">Подробнее</button>
+            </a>
+            <a class='scroll' href="{% url 'main' %}#anchor-signup">
+                {% if course.btn_color == 'Желтый' %}
+                <button class="btn btn-outline-custom block4-btn-kinder2">Запишись сейчас</button>
+                {% endif %}
+                {% if course.btn_color == 'Синий' %}
+                <button class="btn btn-outline-custom block4-btn3">Запишись сейчас</button>
+                {% endif %}
+                {% if course.btn_color == 'Красный' %}
+                <button class="btn btn-outline-custom block4-btn2">Запишись сейчас</button>
+                {% endif %}
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="container text-center py-5" style="width:330px;">По данным параметрам курсов не найдено</div>
+    {% endif %}
+</div>
+{% show_more "Показать еще курсы" %}
